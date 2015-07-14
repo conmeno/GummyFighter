@@ -88,8 +88,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   override func didMoveToView(view: SKView) {
   
     playBackgroundMusic("1.mp3")
+    
+    /* Setup your scene here */
+    var background : SKSpriteNode = SKSpriteNode (imageNamed: "firstBg.png")
+    background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+    self.addChild(background)
+    
   
-    backgroundColor = SKColor.purpleColor()
+    //backgroundColor = SKColor.purpleColor()
     player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
     addChild(player)
     

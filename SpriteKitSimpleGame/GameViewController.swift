@@ -21,7 +21,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
         
-        var size = CGSizeMake(100,100)
+        //var size = CGSizeMake(100,100)
         //let scene = GameScene(size: size)
         let scene = GameScene(size: view.bounds.size)
         
