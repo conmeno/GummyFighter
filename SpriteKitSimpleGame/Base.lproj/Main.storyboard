@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModule="SpriteKitSimpleGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-N3-x2A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="b1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-Xq-etW">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuf-1o-IDh">
+                                        <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="4kx-8U-biR"/>
+                                            <constraint firstAttribute="width" constant="256" id="e9V-ac-AW4"/>
+                                        </constraints>
+                                        <state key="normal" image="play256.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="StartClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="Tq4-Fh-58d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.60525949709044879" blue="0.42381435940700474" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pBQ-Xq-etW" firstAttribute="top" secondItem="hVb-N3-x2A" secondAttribute="top" id="0xO-Yt-TKQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="pBQ-Xq-etW" secondAttribute="bottom" id="6wL-xd-5gN"/>
+                                    <constraint firstAttribute="centerX" secondItem="fuf-1o-IDh" secondAttribute="centerX" id="8mm-t1-sw4"/>
+                                    <constraint firstAttribute="trailing" secondItem="pBQ-Xq-etW" secondAttribute="trailing" id="McW-zl-f76"/>
+                                    <constraint firstItem="pBQ-Xq-etW" firstAttribute="leading" secondItem="hVb-N3-x2A" secondAttribute="leading" id="XXP-8J-Rg3"/>
+                                    <constraint firstAttribute="centerY" secondItem="fuf-1o-IDh" secondAttribute="centerY" id="rah-IN-Nfl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hVb-N3-x2A" firstAttribute="top" secondItem="bdc-N1-crn" secondAttribute="topMargin" id="Q8F-fp-iRX"/>
+                            <constraint firstItem="hVb-N3-x2A" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="-16" id="RBE-fY-rcx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hVb-N3-x2A" secondAttribute="trailing" constant="-16" id="UjA-UA-AXi"/>
+                            <constraint firstItem="b3d-qh-BLL" firstAttribute="top" secondItem="hVb-N3-x2A" secondAttribute="bottom" id="brj-O7-Dlu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="StartButton" destination="fuf-1o-IDh" id="gEf-uT-41L"/>
+                        <outlet property="startView" destination="hVb-N3-x2A" id="6JD-3d-jTN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="b1.jpg" width="683" height="1024"/>
+        <image name="play256.png" width="256" height="256"/>
+    </resources>
+</document>
