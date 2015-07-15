@@ -8,6 +8,7 @@
 
 import AVFoundation
 
+
 var backgroundMusicPlayer: AVAudioPlayer!
 
 func playBackgroundMusic(filename: String) {
@@ -32,6 +33,7 @@ func playBackgroundMusic(filename: String) {
 }
 
 import SpriteKit
+import iAd
 
 func + (left: CGPoint, right: CGPoint) -> CGPoint {
   return CGPoint(x: left.x + right.x, y: left.y + right.y)
@@ -78,25 +80,37 @@ struct PhysicsCategory {
 //}
 
 
-
+import iAd
 class GameScene: SKScene, SKPhysicsContactDelegate {
   
+   var UIiAd: ADBannerView = ADBannerView()
   let player = SKSpriteNode(imageNamed: "player")
   var monstersDestroyed = 0
   //var delegate2:SwiftrisDelegate?
   let lbScore = SKLabelNode()
+    
+    
+    func appdelegate() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as AppDelegate
+    }
   override func didMoveToView(view: SKView) {
-  
+    
+    UIiAd = self.appdelegate().UIiAd
+    UIiAd.alpha = 0
+    
+
+    
     playBackgroundMusic("1.mp3")
-    
     /* Setup your scene here */
-    var background : SKSpriteNode = SKSpriteNode (imageNamed: "firstBg.png")
+    var background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
     background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
+    background.zPosition = 0.0
+    background.alpha = 0.5
     self.addChild(background)
-    
   
     //backgroundColor = SKColor.purpleColor()
     player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
+    player.zPosition = 0.5
     addChild(player)
     
     physicsWorld.gravity = CGVectorMake(0, 0)
@@ -109,7 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     lbScore.text = "0"
     lbScore.fontSize = 25
     lbScore.fontColor = SKColor.whiteColor()
-    lbScore.position = CGPoint(x: 10, y: 0)
+    lbScore.position = CGPoint(x: 10, y: 10)
     addChild(lbScore)
     //end set core
     
@@ -139,7 +153,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     monster.physicsBody?.categoryBitMask = PhysicsCategory.Monster
     monster.physicsBody?.contactTestBitMask = PhysicsCategory.Projectile
     monster.physicsBody?.collisionBitMask = PhysicsCategory.None
-    
+     monster.zPosition = 0.5
     // Determine where to spawn the monster along the Y axis
     let actualY = random(min: monster.size.height/2, max: size.height - monster.size.height/2)
     

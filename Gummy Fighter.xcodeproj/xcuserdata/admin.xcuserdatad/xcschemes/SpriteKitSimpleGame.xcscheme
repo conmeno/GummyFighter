@@ -105,7 +105,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "Gummy Fighter"
+      customArchiveName = "Gummy Fight"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
