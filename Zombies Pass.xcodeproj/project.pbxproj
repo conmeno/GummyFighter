@@ -19,6 +19,10 @@
 		3571651019DB322700ED38A9 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3571650F19DB322700ED38A9 /* GameOverScene.swift */; };
 		843088841B54DE2E00417097 /* play256.png in Resources */ = {isa = PBXBuildFile; fileRef = 843088831B54DE2E00417097 /* play256.png */; };
 		843088861B54E1BF00417097 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843088851B54E1BF00417097 /* iAd.framework */; };
+		848E43CC1B574DF200BA9358 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 848E43CA1B574DF200BA9358 /* bg1.png */; };
+		848E43CD1B574DF200BA9358 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848E43CB1B574DF200BA9358 /* bg2.png */; };
+		848E43CF1B574E0100BA9358 /* Paintball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E43CE1B574E0100BA9358 /* Paintball.mp3 */; };
+		848E43D11B574E1400BA9358 /* zplay256.png in Resources */ = {isa = PBXBuildFile; fileRef = 848E43D01B574E1400BA9358 /* zplay256.png */; };
 		84A1AD751B560B2400884A7D /* b1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A1AD741B560B2400884A7D /* b1.png */; };
 		84E24DDB1B54D4F10006C070 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDA1B54D4F10006C070 /* 1.mp3 */; };
 		84E24DDD1B54D50B0006C070 /* buzz2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDC1B54D50B0006C070 /* buzz2.mp3 */; };
@@ -36,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		357164DF19DB1E4800ED38A9 /* Gummy Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gummy Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		357164DF19DB1E4800ED38A9 /* Zombies Pass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zombies Pass.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		357164E319DB1E4800ED38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357164E419DB1E4800ED38A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357164E619DB1E4800ED38A9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -45,13 +49,17 @@
 		357164ED19DB1E4800ED38A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		357164EF19DB1E4800ED38A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		357164F219DB1E4800ED38A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		357164F819DB1E4800ED38A9 /* Gummy FighterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gummy FighterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		357164F819DB1E4800ED38A9 /* Zombies PassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zombies PassTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		357164FD19DB1E4800ED38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357164FE19DB1E4800ED38A9 /* SpriteKitSimpleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitSimpleGameTests.swift; sourceTree = "<group>"; };
 		3571650B19DB1F5500ED38A9 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		3571650F19DB322700ED38A9 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		843088831B54DE2E00417097 /* play256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play256.png; sourceTree = "<group>"; };
 		843088851B54E1BF00417097 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		848E43CA1B574DF200BA9358 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
+		848E43CB1B574DF200BA9358 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		848E43CE1B574E0100BA9358 /* Paintball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Paintball.mp3; sourceTree = "<group>"; };
+		848E43D01B574E1400BA9358 /* zplay256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zplay256.png; sourceTree = "<group>"; };
 		84A1AD741B560B2400884A7D /* b1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b1.png; sourceTree = "<group>"; };
 		84E24DDA1B54D4F10006C070 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		84E24DDC1B54D50B0006C070 /* buzz2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzz2.mp3; sourceTree = "<group>"; };
@@ -89,8 +97,8 @@
 		357164E019DB1E4800ED38A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				357164DF19DB1E4800ED38A9 /* Gummy Fighter.app */,
-				357164F819DB1E4800ED38A9 /* Gummy FighterTests.xctest */,
+				357164DF19DB1E4800ED38A9 /* Zombies Pass.app */,
+				357164F819DB1E4800ED38A9 /* Zombies PassTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +150,10 @@
 		3571650819DB1F5500ED38A9 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				848E43D01B574E1400BA9358 /* zplay256.png */,
+				848E43CE1B574E0100BA9358 /* Paintball.mp3 */,
+				848E43CA1B574DF200BA9358 /* bg1.png */,
+				848E43CB1B574DF200BA9358 /* bg2.png */,
 				84A1AD741B560B2400884A7D /* b1.png */,
 				96831D291B5544C400F4F49A /* firstBg.png */,
 				843088831B54DE2E00417097 /* play256.png */,
@@ -154,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		357164DE19DB1E4800ED38A9 /* Gummy Fighter */ = {
+		357164DE19DB1E4800ED38A9 /* Zombies Pass */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Gummy Fighter" */;
+			buildConfigurationList = 3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Zombies Pass" */;
 			buildPhases = (
 				357164DB19DB1E4800ED38A9 /* Sources */,
 				357164DC19DB1E4800ED38A9 /* Frameworks */,
@@ -166,14 +178,14 @@
 			);
 			dependencies = (
 			);
-			name = "Gummy Fighter";
+			name = "Zombies Pass";
 			productName = SpriteKitSimpleGame;
-			productReference = 357164DF19DB1E4800ED38A9 /* Gummy Fighter.app */;
+			productReference = 357164DF19DB1E4800ED38A9 /* Zombies Pass.app */;
 			productType = "com.apple.product-type.application";
 		};
-		357164F719DB1E4800ED38A9 /* Gummy FighterTests */ = {
+		357164F719DB1E4800ED38A9 /* Zombies PassTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Gummy FighterTests" */;
+			buildConfigurationList = 3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Zombies PassTests" */;
 			buildPhases = (
 				357164F419DB1E4800ED38A9 /* Sources */,
 				357164F519DB1E4800ED38A9 /* Frameworks */,
@@ -184,9 +196,9 @@
 			dependencies = (
 				357164FA19DB1E4800ED38A9 /* PBXTargetDependency */,
 			);
-			name = "Gummy FighterTests";
+			name = "Zombies PassTests";
 			productName = SpriteKitSimpleGameTests;
-			productReference = 357164F819DB1E4800ED38A9 /* Gummy FighterTests.xctest */;
+			productReference = 357164F819DB1E4800ED38A9 /* Zombies PassTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Gummy Fighter" */;
+			buildConfigurationList = 357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Zombies Pass" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,8 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				357164DE19DB1E4800ED38A9 /* Gummy Fighter */,
-				357164F719DB1E4800ED38A9 /* Gummy FighterTests */,
+				357164DE19DB1E4800ED38A9 /* Zombies Pass */,
+				357164F719DB1E4800ED38A9 /* Zombies PassTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,14 +244,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848E43D11B574E1400BA9358 /* zplay256.png in Resources */,
+				848E43CF1B574E0100BA9358 /* Paintball.mp3 in Resources */,
 				84A1AD751B560B2400884A7D /* b1.png in Resources */,
 				3571650E19DB1F5500ED38A9 /* sprites.atlas in Resources */,
 				843088841B54DE2E00417097 /* play256.png in Resources */,
 				84E24DDD1B54D50B0006C070 /* buzz2.mp3 in Resources */,
+				848E43CC1B574DF200BA9358 /* bg1.png in Resources */,
 				357164F319DB1E4800ED38A9 /* LaunchScreen.xib in Resources */,
 				357164F019DB1E4800ED38A9 /* Images.xcassets in Resources */,
 				84E24DDB1B54D4F10006C070 /* 1.mp3 in Resources */,
 				357164E719DB1E4800ED38A9 /* GameScene.sks in Resources */,
+				848E43CD1B574DF200BA9358 /* bg2.png in Resources */,
 				357164EE19DB1E4800ED38A9 /* Main.storyboard in Resources */,
 				96831D2A1B5544C400F4F49A /* firstBg.png in Resources */,
 			);
@@ -279,7 +295,7 @@
 /* Begin PBXTargetDependency section */
 		357164FA19DB1E4800ED38A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 357164DE19DB1E4800ED38A9 /* Gummy Fighter */;
+			target = 357164DE19DB1E4800ED38A9 /* Zombies Pass */;
 			targetProxy = 357164F919DB1E4800ED38A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -391,7 +407,7 @@
 				INFOPLIST_FILE = SpriteKitSimpleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Gummy Fighter";
+				PRODUCT_NAME = "Zombies Pass";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -406,7 +422,7 @@
 				INFOPLIST_FILE = SpriteKitSimpleGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Gummy Fighter";
+				PRODUCT_NAME = "Zombies Pass";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -425,7 +441,7 @@
 				);
 				INFOPLIST_FILE = SpriteKitSimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Gummy FighterTests";
+				PRODUCT_NAME = "Zombies PassTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gummy Fighter.app/Gummy Fighter";
 			};
 			name = Debug;
@@ -440,7 +456,7 @@
 				);
 				INFOPLIST_FILE = SpriteKitSimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Gummy FighterTests";
+				PRODUCT_NAME = "Zombies PassTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gummy Fighter.app/Gummy Fighter";
 			};
 			name = Release;
@@ -448,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Gummy Fighter" */ = {
+		357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Zombies Pass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650019DB1E4800ED38A9 /* Debug */,
@@ -457,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Gummy Fighter" */ = {
+		3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Zombies Pass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650319DB1E4800ED38A9 /* Debug */,
@@ -466,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Gummy FighterTests" */ = {
+		3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Zombies PassTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650619DB1E4800ED38A9 /* Debug */,

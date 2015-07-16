@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
                BuildableName = "Gummy Fighter.app"
-               BlueprintName = "Gummy Fighter"
-               ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+               BlueprintName = "Zombies Pass"
+               ReferencedContainer = "container:Zombies Pass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,8 +30,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164F719DB1E4800ED38A9"
                BuildableName = "Gummy FighterTests.xctest"
-               BlueprintName = "Gummy FighterTests"
-               ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+               BlueprintName = "Zombies PassTests"
+               ReferencedContainer = "container:Zombies Pass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,8 +48,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164F719DB1E4800ED38A9"
                BuildableName = "Gummy FighterTests.xctest"
-               BlueprintName = "Gummy FighterTests"
-               ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+               BlueprintName = "Zombies PassTests"
+               ReferencedContainer = "container:Zombies Pass.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
             BuildableName = "Gummy Fighter.app"
-            BlueprintName = "Gummy Fighter"
-            ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+            BlueprintName = "Zombies Pass"
+            ReferencedContainer = "container:Zombies Pass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
             BuildableName = "Gummy Fighter.app"
-            BlueprintName = "Gummy Fighter"
-            ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+            BlueprintName = "Zombies Pass"
+            ReferencedContainer = "container:Zombies Pass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,8 +95,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
             BuildableName = "Gummy Fighter.app"
-            BlueprintName = "Gummy Fighter"
-            ReferencedContainer = "container:Gummy Fighter.xcodeproj">
+            BlueprintName = "Zombies Pass"
+            ReferencedContainer = "container:Zombies Pass.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
