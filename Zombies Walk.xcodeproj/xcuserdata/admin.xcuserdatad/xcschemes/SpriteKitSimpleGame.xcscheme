@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-               BuildableName = "Zombies Pass.app"
+               BuildableName = "Zombies Walk.app"
                BlueprintName = "Zombies Walk"
                ReferencedContainer = "container:Zombies Walk.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164F719DB1E4800ED38A9"
-               BuildableName = "Zombies PassTests.xctest"
+               BuildableName = "Zombies WalkTests.xctest"
                BlueprintName = "Zombies WalkTests"
                ReferencedContainer = "container:Zombies Walk.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164F719DB1E4800ED38A9"
-               BuildableName = "Zombies PassTests.xctest"
+               BuildableName = "Zombies WalkTests.xctest"
                BlueprintName = "Zombies WalkTests"
                ReferencedContainer = "container:Zombies Walk.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Zombies Pass.app"
+            BuildableName = "Zombies Walk.app"
             BlueprintName = "Zombies Walk"
             ReferencedContainer = "container:Zombies Walk.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Zombies Pass.app"
+            BuildableName = "Zombies Walk.app"
             BlueprintName = "Zombies Walk"
             ReferencedContainer = "container:Zombies Walk.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Zombies Pass.app"
+            BuildableName = "Zombies Walk.app"
             BlueprintName = "Zombies Walk"
             ReferencedContainer = "container:Zombies Walk.xcodeproj">
          </BuildableReference>

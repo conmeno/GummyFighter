@@ -81,7 +81,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
        
         UIiAd.frame = CGRectMake(0, SH - BV, 0, 0)
         self.view.addSubview(UIiAd)
-        UIiAd.setTranslatesAutoresizingMaskIntoConstraints(false)
+        //UIiAd.setTranslatesAutoresizingMaskIntoConstraints(false)
         UIiAd.delegate = self
          UIiAd.hidden = true
 //        let viewsDictionary = ["bannerView": UIiAd]
@@ -107,12 +107,12 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     // 4
     func bannerViewDidLoadAd(banner: ADBannerView!) {
 //        
-//        UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
-//        UIView.beginAnimations(nil, context: nil)
-//        UIView.setAnimationDuration(1)
-//        //UIiAd.alpha = 1
-//        UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
-//        UIView.commitAnimations()
+        UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(1)
+        UIiAd.hidden = false
+        UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
+        UIView.commitAnimations()
         UIiAd.hidden = false
         println("da load ")
     }
@@ -129,7 +129,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        println("ad press ")
+        //println("ad press " + banner.advertisingSection)
         PauseGame()
         return true
     }
