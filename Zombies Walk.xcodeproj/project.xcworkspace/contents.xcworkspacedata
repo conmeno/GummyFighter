@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Zombies Pass.xcodeproj">
+      location = "self:Zombies Walk.xcodeproj">
    </FileRef>
 </Workspace>

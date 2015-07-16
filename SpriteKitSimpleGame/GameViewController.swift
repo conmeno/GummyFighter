@@ -49,7 +49,8 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-     UIiAd.alpha = 0
+    //showAdd()
+    //UIiAd.alpha = 0
   }
   
 //     func gamePoint(point: Int)
@@ -77,10 +78,16 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     {
         BV = UIiAd.bounds.height
         UIiAd = self.appdelegate().UIiAd
-        UIiAd.alpha = 1
+       
         UIiAd.frame = CGRectMake(0, SH - BV, 0, 0)
         self.view.addSubview(UIiAd)
+        UIiAd.setTranslatesAutoresizingMaskIntoConstraints(false)
         UIiAd.delegate = self
+         UIiAd.hidden = true
+//        let viewsDictionary = ["bannerView": UIiAd]
+//        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bannerView]|", options: .allZeros, metrics: nil, views: viewsDictionary))
+//        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bannerView]|", options: .allZeros, metrics: nil, views: viewsDictionary))
+        
         println("khoi tao ")
     }
     
@@ -93,28 +100,30 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     //   bannerViewWillLoadAd
     func bannerViewWillLoadAd(banner: ADBannerView!) {
         println("will load ")
-        UIiAd.alpha = 1
+        UIiAd.hidden = false
     }
     
     
     // 4
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        
-        UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(1)
-        //UIiAd.alpha = 1
-        UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
-        UIView.commitAnimations()
+//        
+//        UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
+//        UIView.beginAnimations(nil, context: nil)
+//        UIView.setAnimationDuration(1)
+//        //UIiAd.alpha = 1
+//        UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
+//        UIView.commitAnimations()
+        UIiAd.hidden = false
         println("da load ")
     }
     
     // 5
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0)
-        UIiAd.alpha = 1
-        UIView.commitAnimations()
+//        UIView.beginAnimations(nil, context: nil)
+//        UIView.setAnimationDuration(0)
+//        UIiAd.hidden = true
+//        UIView.commitAnimations()
+        UIiAd.hidden = true
         println("fail load ")
         
     }

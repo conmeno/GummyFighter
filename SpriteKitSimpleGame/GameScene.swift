@@ -100,12 +100,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 
     
-    playBackgroundMusic("1.mp3")
+    playBackgroundMusic("Paintball.mp3")
     /* Setup your scene here */
-    var background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
+    var background : SKSpriteNode = SKSpriteNode (imageNamed: "bg2.png")
     background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     background.zPosition = 0.0
-    background.alpha = 0.5
+    //background.alpha = 0.5
     self.addChild(background)
   
     //backgroundColor = SKColor.purpleColor()
@@ -145,9 +145,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   }
 
   func addMonster() {
-
+  let zombie = random(min: 1.0, max: 4.0)
+    println(zombie)
+    var actualDuration = 1.0
     // Create sprite
-    let monster = SKSpriteNode(imageNamed: "monster")
+    var monster = SKSpriteNode(imageNamed: "z1")
+    if(zombie >= 3)
+    {
+        monster = SKSpriteNode(imageNamed: "z3")
+        actualDuration = 1.4
+    }else if( zombie >= 2)
+    {
+        monster = SKSpriteNode(imageNamed: "z2")
+        actualDuration = 2.5
+    }
+    else
+    {
+      monster = SKSpriteNode(imageNamed: "z1")
+        actualDuration = 3.5
+    }
     monster.physicsBody = SKPhysicsBody(rectangleOfSize: monster.size)
     monster.physicsBody?.dynamic = true
     monster.physicsBody?.categoryBitMask = PhysicsCategory.Monster
@@ -165,7 +181,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     addChild(monster)
     
     // Determine speed of the monster
-    let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+    //let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
     
     // Create the actions
     let actionMove = SKAction.moveTo(CGPoint(x: -monster.size.width/2, y: actualY), duration: NSTimeInterval(actualDuration))
@@ -188,7 +204,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let touchLocation = touch.locationInNode(self)
     
     // 2 - Set up initial location of projectile
-    let projectile = SKSpriteNode(imageNamed: "projectile")
+    let projectile = SKSpriteNode(imageNamed: "ball")
     projectile.position = player.position
     
     projectile.physicsBody = SKPhysicsBody(circleOfRadius: projectile.size.width/2)
@@ -197,6 +213,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     projectile.physicsBody?.contactTestBitMask = PhysicsCategory.Monster
     projectile.physicsBody?.collisionBitMask = PhysicsCategory.None
     projectile.physicsBody?.usesPreciseCollisionDetection = true
+    projectile.zPosition = 0.5
     
     // 3 - Determine offset of location to projectile
     let offset = touchLocation - projectile.position
