@@ -34,6 +34,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
        // scene.delegate2 = self
         skView.presentScene(scene)
          UIiAd.alpha = 0
+        
     }
     
     func PauseGame()
@@ -129,7 +130,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        //println("ad press " + banner.advertisingSection)
+        println("ad press " + banner!.advertisingSection)
         PauseGame()
         return true
     }
