@@ -9,15 +9,47 @@
 import UIKit
 import SpriteKit
 import iAd
+import GoogleMobileAds
 
 class GameViewController: UIViewController, ADBannerViewDelegate {
     var UIiAd: ADBannerView = ADBannerView()
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
     
+    @IBOutlet weak var UDIDlb: UILabel!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var StartButton: UIButton!
+    
+    @IBOutlet weak var topView: UIView!
+    
+    @IBAction func MoreGameDrag(sender: AnyObject) {
+          topView.hidden = false
+        
+        let dev = UIDevice.currentDevice().identifierForVendor.UUIDString
+        
+        UDIDlb.text = dev
+    }
+    
+    
+    @IBAction func MoreGameClick(sender: AnyObject) {
+        var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
+        UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
+
+    }
+    
+    @IBAction func showAdClick(sender: AnyObject) {
+        
+        if (self.interstitial.isReady)
+        {
+            self.interstitial.presentFromRootViewController(self)
+            self.interstitial = self.createAndLoadAd()
+        }
+        
+        
+        let dev = UIDevice.currentDevice().identifierForVendor.UUIDString
+        println(dev)
+    }
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
         
@@ -36,6 +68,21 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
          UIiAd.alpha = 0
     }
     
+    var interstitial: GADInterstitial!
+    
+    func createAndLoadAd() -> GADInterstitial
+    {
+        var ad = GADInterstitial(adUnitID: "ca-app-pub-6627251093546168/2847273136")
+        
+        var request = GADRequest()
+        
+        request.testDevices = [""]
+        UDIDlb.text = request.testDevices[0].description
+        ad.loadRequest(request)
+        
+        return ad
+    }
+    
     func PauseGame()
     {
 //        scene.stopTicking()
@@ -49,7 +96,9 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+   // topView.hidden = true
      UIiAd.alpha = 0
+    self.interstitial = self.createAndLoadAd()
   }
   
 //     func gamePoint(point: Int)
@@ -125,5 +174,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
         return true
     }
     //end iad
+    //admob delegate
     
+   
 }
