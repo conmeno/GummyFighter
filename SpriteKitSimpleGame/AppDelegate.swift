@@ -8,18 +8,33 @@
 
 import UIKit
 import iAd
-
+import GoogleMobileAds
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
     var UIiAd: ADBannerView = ADBannerView()
+     var interstitial: GADInterstitial!
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    self.interstitial =  self.createAndLoadAd()
+    
     return true
   }
-
+    func createAndLoadAd() -> GADInterstitial
+    {
+        var ad = GADInterstitial(adUnitID: "ca-app-pub-6627251093546168/2847273136")
+        
+        var request = GADRequest()
+        
+        request.testDevices = [""]
+        
+        ad.loadRequest(request)
+        self.interstitial = ad
+        
+        return ad
+    }
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

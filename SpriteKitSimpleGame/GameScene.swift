@@ -74,10 +74,12 @@ struct PhysicsCategory {
   static let Projectile: UInt32 = 0b10      // 2
 }
 
-//protocol SwiftrisDelegate {
-//    func gamePoint(point: Int)
-//    
-//}
+protocol SwiftrisDelegate {
+    func gameOver()
+    func gameStart()
+    
+    
+}
 
 
 import iAd
@@ -86,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    var UIiAd: ADBannerView = ADBannerView()
   let player = SKSpriteNode(imageNamed: "player")
   var monstersDestroyed = 0
-  //var delegate2:SwiftrisDelegate?
+  var delegate2:SwiftrisDelegate?
   let lbScore = SKLabelNode()
     
     
@@ -98,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     UIiAd = self.appdelegate().UIiAd
     UIiAd.alpha = 0
     
-
+    self.delegate2?.gameStart()
     
     playBackgroundMusic("1.mp3")
     /* Setup your scene here */
@@ -165,15 +167,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     addChild(monster)
     
     // Determine speed of the monster
-    let actualDuration = random(min: CGFloat(2.0), max: CGFloat(4.0))
+    let actualDuration = random(min: CGFloat(1.0), max: CGFloat(3.0))
     
     // Create the actions
     let actionMove = SKAction.moveTo(CGPoint(x: -monster.size.width/2, y: actualY), duration: NSTimeInterval(actualDuration))
     let actionMoveDone = SKAction.removeFromParent()
     let loseAction = SKAction.runBlock() {
+        
+
       let reveal = SKTransition.flipHorizontalWithDuration(0.5)
       let gameOverScene = GameOverScene(size: self.size, won: false)
       self.view?.presentScene(gameOverScene, transition: reveal)
+    self.delegate2?.gameOver()
     }
     monster.runAction(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
 

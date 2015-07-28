@@ -34,6 +34,8 @@ class GameOverScene: SKScene {
                 let reveal = SKTransition.flipHorizontalWithDuration(0.5)
                 let scene = GameScene(size: size)
                 self.view?.presentScene(scene, transition:reveal)
+            
+
                  UIiAd.alpha = 0
 
             }
@@ -47,6 +49,15 @@ class GameOverScene: SKScene {
     super.init(size: size)
     UIiAd = self.appdelegate().UIiAd
     UIiAd.alpha = 1
+    var interstitial = self.appdelegate().interstitial
+    if (interstitial.isReady)
+    {
+ 
+        //        presentViewController
+        var rootViewController = self.appdelegate().window?.rootViewController
+        interstitial.presentFromRootViewController(rootViewController)
+        self.appdelegate().createAndLoadAd()
+    }
     
     // 1
     backgroundColor = SKColor.whiteColor()
@@ -69,6 +80,7 @@ class GameOverScene: SKScene {
     label2.position = CGPoint(x: size.width/2, y: size.height/2 - 5)
     addChild(label2)
 
+    
     
     // 4
 //    runAction(SKAction.sequence([
