@@ -11,11 +11,13 @@ import SpriteKit
 import iAd
 import GoogleMobileAds
 
-class GameViewController: UIViewController, ADBannerViewDelegate {
+class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelegate {
     var UIiAd: ADBannerView = ADBannerView()
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
     
+     var vungleSdk = VungleSDK.sharedSDK()
+      var AdNumber = 1
     @IBOutlet weak var UDIDlb: UILabel!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var startView: UIView!
@@ -40,16 +42,31 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
     
     @IBAction func showAdClick(sender: AnyObject) {
         
+        showAds()
+    }
+    func showAdmob()
+    {
         if (self.interstitial.isReady)
         {
             self.interstitial.presentFromRootViewController(self)
             self.interstitial = self.createAndLoadAd()
         }
-        
-        
-        let dev = UIDevice.currentDevice().identifierForVendor.UUIDString
-        println(dev)
     }
+    func showAds()
+    {
+        Chartboost.showInterstitial("Home" + String(AdNumber))
+        //Chartboost.showMoreApps("Home")
+        //Chartboost.showRewardedVideo("Home")
+        vungleSdk.playAd(self, error: nil)
+        AdNumber++
+        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
+        if(AdNumber > 7)
+        {
+            topView.backgroundColor = UIColor.redColor()
+        }
+        println(AdNumber)
+    }
+    
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
         
@@ -99,6 +116,15 @@ class GameViewController: UIViewController, ADBannerViewDelegate {
    // topView.hidden = true
      UIiAd.alpha = 0
     self.interstitial = self.createAndLoadAd()
+    
+    //show chartboost
+    Chartboost.showInterstitial("Home")
+    //show vungle
+    vungleSdk.delegate = self
+    vungleSdk.playAd(self, error: nil)
+    //adcolony
+    AdColony.playVideoAdForZone("vzd576c4633e5544b8aa", withDelegate: nil)
+
   }
   
 //     func gamePoint(point: Int)
