@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
     
     //vungle
     // Override point for customization after application launch.
-    var appID = "1007059414"
+    var appID = "1019089262"
     var sdk = VungleSDK.sharedSDK()
     // start vungle publisher library
     sdk.startWithAppId(appID)

@@ -40,6 +40,9 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
 
     }
     
+    @IBAction func RealMoreAppClick(sender: AnyObject) {
+    }
+    
     @IBAction func showAdClick(sender: AnyObject) {
         
         showAds()
@@ -57,13 +60,13 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
         Chartboost.showInterstitial("Home" + String(AdNumber))
         //Chartboost.showMoreApps("Home")
         //Chartboost.showRewardedVideo("Home")
-        vungleSdk.playAd(self, error: nil)
-        AdNumber++
-        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
-        if(AdNumber > 7)
-        {
-            topView.backgroundColor = UIColor.redColor()
-        }
+//        vungleSdk.playAd(self, error: nil)
+//        AdNumber++
+//        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
+//        if(AdNumber > 7)
+//        {
+//            topView.backgroundColor = UIColor.redColor()
+//        }
         println(AdNumber)
     }
     
@@ -113,7 +116,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
 
   override func viewDidLoad() {
     super.viewDidLoad()
-   // topView.hidden = true
+    topView.hidden = true
      UIiAd.alpha = 0
     self.interstitial = self.createAndLoadAd()
     
