@@ -16,9 +16,10 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
     
+    @IBOutlet weak var txtUDID: UITextView!
      var vungleSdk = VungleSDK.sharedSDK()
       var AdNumber = 1
-    @IBOutlet weak var UDIDlb: UILabel!
+    //@IBOutlet weak var UDIDlb: UILabel!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var StartButton: UIButton!
@@ -26,21 +27,39 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     @IBOutlet weak var topView: UIView!
     
     @IBAction func MoreGameDrag(sender: AnyObject) {
-          topView.hidden = false
+        
         
         let dev = UIDevice.currentDevice().identifierForVendor.UUIDString
         
-        UDIDlb.text = dev
+        txtUDID.text = dev
+        topView.hidden = false
     }
     
     
     @IBAction func MoreGameClick(sender: AnyObject) {
+       //topView.hidden = false
         var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
         UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
 
     }
     
+    
+    @IBAction func AdmobClick(sender: AnyObject) {
+        showAdmob()
+    }
+    
+    @IBAction func VungleClick(sender: AnyObject) {
+        showVungle()
+    }
+    
+    
+    @IBAction func AdcolonyClick(sender: AnyObject) {
+        showAdcolony()
+    }
+    
     @IBAction func RealMoreAppClick(sender: AnyObject) {
+        var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
+        UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
     }
     
     @IBAction func showAdClick(sender: AnyObject) {
@@ -58,17 +77,17 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     func showAds()
     {
         Chartboost.showInterstitial("Home" + String(AdNumber))
-        //Chartboost.showMoreApps("Home")
-        //Chartboost.showRewardedVideo("Home")
-//        vungleSdk.playAd(self, error: nil)
-//        AdNumber++
-//        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
-//        if(AdNumber > 7)
-//        {
-//            topView.backgroundColor = UIColor.redColor()
-//        }
         println(AdNumber)
     }
+    func showAdcolony()
+    {
+        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
+    }
+    func showVungle()
+    {
+        vungleSdk.playAd(self, error: nil)
+    }
+    
     
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
@@ -97,7 +116,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
         var request = GADRequest()
         
         request.testDevices = [""]
-        UDIDlb.text = request.testDevices[0].description
+        
         ad.loadRequest(request)
         
         return ad
@@ -116,6 +135,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    txtUDID.hidden = false
     topView.hidden = true
      UIiAd.alpha = 0
     self.interstitial = self.createAndLoadAd()

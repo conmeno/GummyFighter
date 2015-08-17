@@ -37,20 +37,6 @@
                                             <action selector="StartClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="Tq4-Fh-58d"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzF-Eh-2bd">
-                                        <rect key="frame" x="0.0" y="482" width="245" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="CQG-sg-bal"/>
-                                            <constraint firstAttribute="width" constant="245" id="IXG-dl-Qv1"/>
-                                        </constraints>
-                                        <state key="normal" title="More Game by Phuong Nguyen">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="MoreGameClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="dLH-7B-8wO"/>
-                                            <action selector="MoreGameDrag:" destination="LVB-YS-i5n" eventType="touchDragOutside" id="KLp-2G-X7U"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjG-kg-khv" userLabel="topView">
                                         <rect key="frame" x="0.0" y="-16" width="600" height="220"/>
                                         <subviews>
@@ -76,55 +62,96 @@
                                                     <action selector="RealMoreAppClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="XKo-fo-udT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl2-xc-qVM">
-                                                <rect key="frame" x="0.0" y="190" width="158" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl2-xc-qVM">
+                                                <rect key="frame" x="0.0" y="169" width="153" height="51"/>
                                                 <color key="backgroundColor" red="0.66666666666666663" green="0.62322927364656555" blue="0.11559413872252773" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="153" id="FnY-fu-8Xi"/>
+                                                    <constraint firstAttribute="height" constant="51" id="SNJ-5i-tP1"/>
+                                                </constraints>
                                                 <state key="normal" title="Admob">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="AdmobClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="dYv-0e-xFK"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXn-Qg-ks6">
-                                                <rect key="frame" x="471" y="190" width="129" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXn-Qg-ks6">
+                                                <rect key="frame" x="432" y="168" width="168" height="52"/>
                                                 <color key="backgroundColor" red="0.36617062514399334" green="0.66666666666666663" blue="0.23731683561095776" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="168" id="Do1-RK-rFt"/>
+                                                    <constraint firstAttribute="height" constant="52" id="swX-ht-mR8"/>
+                                                </constraints>
                                                 <state key="normal" title="Adcolony">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="AdcolonyClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="uu9-3k-6WW"/>
+                                                </connections>
                                             </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6V3-8B-wqS">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI5-Z9-v20">
-                                                <rect key="frame" x="259" y="190" width="82" height="30"/>
+                                                <rect key="frame" x="240" y="169" width="121" height="51"/>
                                                 <color key="backgroundColor" red="0.66666666666666663" green="0.24705695584233558" blue="0.63260008482352503" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="6jO-5E-Knf"/>
-                                                    <constraint firstAttribute="width" constant="82" id="9Y2-oD-XV7"/>
+                                                    <constraint firstAttribute="height" constant="51" id="Jjj-8S-fO8"/>
+                                                    <constraint firstAttribute="width" constant="121" id="T1j-eY-cZW"/>
                                                 </constraints>
                                                 <state key="normal" title="VungLe">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="VungleClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="PEM-Wv-fOg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.96193110111777458" blue="0.71610534531443137" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="GxC-MW-lAs" secondAttribute="centerX" id="5bf-nb-vfe"/>
+                                            <constraint firstAttribute="bottom" secondItem="hl2-xc-qVM" secondAttribute="bottom" id="5ys-0u-U20"/>
                                             <constraint firstAttribute="trailing" secondItem="vcR-87-zG2" secondAttribute="trailing" id="6Yr-Jk-zZ8"/>
+                                            <constraint firstAttribute="bottom" secondItem="WI5-Z9-v20" secondAttribute="bottom" id="A04-Hy-ZZh"/>
+                                            <constraint firstAttribute="trailing" secondItem="PXn-Qg-ks6" secondAttribute="trailing" id="CRk-vC-D8s"/>
                                             <constraint firstItem="vcR-87-zG2" firstAttribute="top" secondItem="MjG-kg-khv" secondAttribute="top" constant="20" symbolic="YES" id="I0t-rc-9QY"/>
+                                            <constraint firstItem="hl2-xc-qVM" firstAttribute="leading" secondItem="MjG-kg-khv" secondAttribute="leading" id="JuH-K5-Rlb"/>
                                             <constraint firstItem="GxC-MW-lAs" firstAttribute="top" secondItem="MjG-kg-khv" secondAttribute="top" constant="50" id="Mgn-ip-hGI"/>
                                             <constraint firstItem="vcR-87-zG2" firstAttribute="leading" secondItem="MjG-kg-khv" secondAttribute="leading" id="VoO-fV-gCt"/>
-                                            <constraint firstAttribute="centerX" secondItem="WI5-Z9-v20" secondAttribute="centerX" id="ZEZ-Q0-laM"/>
                                             <constraint firstAttribute="bottom" secondItem="vcR-87-zG2" secondAttribute="bottom" id="cvH-Lg-OKM"/>
-                                            <constraint firstAttribute="bottom" secondItem="WI5-Z9-v20" secondAttribute="bottom" id="f19-zy-SJI"/>
+                                            <constraint firstAttribute="centerX" secondItem="WI5-Z9-v20" secondAttribute="centerX" id="r4S-vS-5ZB"/>
                                             <constraint firstAttribute="height" constant="220" id="w3w-sr-xJe"/>
+                                            <constraint firstAttribute="bottom" secondItem="PXn-Qg-ks6" secondAttribute="bottom" id="xgA-oY-qy6"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzF-Eh-2bd">
+                                        <rect key="frame" x="10" y="480" width="245" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="aRD-xP-eTY"/>
+                                            <constraint firstAttribute="width" constant="245" id="fgX-D5-1be"/>
+                                        </constraints>
+                                        <state key="normal" title="More Game by Phuong Nguyen">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="MoreGameClick:" destination="LVB-YS-i5n" eventType="touchUpInside" id="dLH-7B-8wO"/>
+                                            <action selector="MoreGameDrag:" destination="LVB-YS-i5n" eventType="touchDragOutside" id="KLp-2G-X7U"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.60525949709044879" blue="0.42381435940700474" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="pBQ-Xq-etW" firstAttribute="top" secondItem="hVb-N3-x2A" secondAttribute="top" id="0xO-Yt-TKQ"/>
                                     <constraint firstAttribute="bottom" secondItem="pBQ-Xq-etW" secondAttribute="bottom" id="6wL-xd-5gN"/>
                                     <constraint firstAttribute="centerX" secondItem="fuf-1o-IDh" secondAttribute="centerX" id="8mm-t1-sw4"/>
+                                    <constraint firstAttribute="bottom" secondItem="BzF-Eh-2bd" secondAttribute="bottom" constant="60" id="H1O-9o-Eyu"/>
                                     <constraint firstAttribute="trailing" secondItem="pBQ-Xq-etW" secondAttribute="trailing" id="McW-zl-f76"/>
                                     <constraint firstItem="pBQ-Xq-etW" firstAttribute="leading" secondItem="hVb-N3-x2A" secondAttribute="leading" id="XXP-8J-Rg3"/>
                                     <constraint firstItem="MjG-kg-khv" firstAttribute="leading" secondItem="hVb-N3-x2A" secondAttribute="leading" id="Ze6-ba-H8j"/>
-                                    <constraint firstAttribute="bottom" secondItem="BzF-Eh-2bd" secondAttribute="bottom" constant="58" id="a3Z-3L-1wX"/>
+                                    <constraint firstItem="BzF-Eh-2bd" firstAttribute="leading" secondItem="hVb-N3-x2A" secondAttribute="leading" constant="10" id="r2G-7o-ryf"/>
                                     <constraint firstAttribute="centerY" secondItem="fuf-1o-IDh" secondAttribute="centerY" id="rah-IN-Nfl"/>
                                     <constraint firstItem="MjG-kg-khv" firstAttribute="top" secondItem="hVb-N3-x2A" secondAttribute="top" constant="-16" id="wFV-9w-6lC"/>
                                     <constraint firstAttribute="trailing" secondItem="MjG-kg-khv" secondAttribute="trailing" id="xVx-Ds-vUn"/>
@@ -143,10 +170,12 @@
                         <outlet property="StartButton" destination="fuf-1o-IDh" id="gEf-uT-41L"/>
                         <outlet property="startView" destination="hVb-N3-x2A" id="6JD-3d-jTN"/>
                         <outlet property="topView" destination="MjG-kg-khv" id="o5n-w9-NxK"/>
+                        <outlet property="txtUDID" destination="6V3-8B-wqS" id="PAs-JS-DTZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="159" y="161"/>
         </scene>
     </scenes>
     <resources>
