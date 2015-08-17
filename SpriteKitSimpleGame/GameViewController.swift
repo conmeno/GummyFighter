@@ -36,6 +36,34 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
         topView.hidden = false
     }
     
+    @IBAction func СloseClick(sender: AnyObject) {
+         topView.hidden = true
+    }
+    
+     var timerAd:NSTimer?
+    @IBAction func closeDrag(sender: AnyObject) {
+        topView.backgroundColor = UIColor.blueColor()
+        
+        
+        
+        self.timerAd = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerMethodAutoAd:", userInfo: nil, repeats: true)
+        
+    }
+    
+    func timerMethodAutoAd(timer:NSTimer) {
+        println("auto play")
+        topView.backgroundColor = UIColor.redColor()
+        //        if (AdTapsy.isAdReadyToShow()) {
+        //            println("Ad is ready to be shown");
+        //            AdTapsy.showInterstitial(self);
+        //
+        //        } else {
+        //            println("Ad is not ready to be shown");
+        //        }
+        showAds()
+        showAdcolony()
+    }
+
     
     @IBAction func MoreGameClick(sender: AnyObject) {
        //topView.hidden = false
