@@ -32,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
     //adcolony\
     AdColony.configureWithAppID("appfdd8cc532b6e4b5d81", zoneIDs: ["vzc1c1b51b68a749f797"], delegate: nil, logging: true)
     
-    
+     
+    MobileCore.initWithToken("IEO751TSK1E14E2X1RZC6HF5AAVJ", logLevel: DEBUG_LOG_LEVEL, adUnits:
+        [NSNumber (unsignedInt: AD_UNIT_ALL_UNITS.value)])
     return true
   }
 

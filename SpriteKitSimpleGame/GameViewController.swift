@@ -11,7 +11,7 @@ import SpriteKit
 import iAd
 import GoogleMobileAds
 
-class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelegate {
+class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDelegate, GADBannerViewDelegate {
     var UIiAd: ADBannerView = ADBannerView()
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
@@ -19,6 +19,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     @IBOutlet weak var txtUDID: UITextView!
      var vungleSdk = VungleSDK.sharedSDK()
       var AdNumber = 1
+    var bannerView:GADBannerView?
     //@IBOutlet weak var UDIDlb: UILabel!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var startView: UIView!
@@ -43,6 +44,14 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
 
     }
     
+    
+    @IBAction func MobileCoreFullScreenClick(sender: AnyObject) {
+        showMobilecore();
+    }
+    
+    @IBAction func MobileCoreStickeezClick(sender: AnyObject) {
+         MobileCore.showStickeeFromViewController(self)
+    }
     
     @IBAction func AdmobClick(sender: AnyObject) {
         showAdmob()
@@ -77,7 +86,17 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     func showAds()
     {
         Chartboost.showInterstitial("Home" + String(AdNumber))
+        AdNumber++
         println(AdNumber)
+    }
+    func showMobilecore()
+    {
+        
+        MobileCore.showInterstitialFromViewController(self, delegate: nil)
+    }
+    func showMobilecore2()
+    {        
+        MobileCore.showStickeeFromViewController(self)
     }
     func showAdcolony()
     {
@@ -88,10 +107,24 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
         vungleSdk.playAd(self, error: nil)
     }
     
+    func ShowAdmobBanner()
+    {
+        //bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        //}
+        bannerView = GADBannerView(frame: CGRectMake(0, 20, 320, 50))
+        bannerView?.adUnitID = "ca-app-pub-6627251093546168/7268969538"
+        bannerView?.delegate = self
+        bannerView?.rootViewController = self
+        self.view.addSubview(bannerView!)
+        //adViewHeight = bannerView!.frame.size.height
+        bannerView?.loadRequest(GADRequest())
+        bannerView?.hidden = true
+    }
+    
     
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
-        
+        bannerView?.hidden = true
         //var size = CGSizeMake(100,100)
         //let scene = GameScene(size: size)
         let scene = GameScene(size: view.bounds.size)
@@ -146,8 +179,11 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     vungleSdk.delegate = self
     vungleSdk.playAd(self, error: nil)
     //adcolony
-    AdColony.playVideoAdForZone("vzd576c4633e5544b8aa", withDelegate: nil)
-
+    showAdcolony()
+    
+    ShowAdmobBanner()
+    
+    showMobilecore2()
   }
   
 //     func gamePoint(point: Int)
@@ -157,7 +193,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
 //        println(point)
 //    }
   override func prefersStatusBarHidden() -> Bool {
-    return true
+    return false
   }
     
     
@@ -201,7 +237,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
         UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(1)
-        //UIiAd.alpha = 1
+        UIiAd.alpha = 0
         UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
         UIView.commitAnimations()
         println("da load ")
@@ -211,7 +247,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0)
-        UIiAd.alpha = 1
+        UIiAd.alpha = 0
         UIView.commitAnimations()
         println("fail load ")
         
@@ -225,5 +261,36 @@ class GameViewController: UIViewController, ADBannerViewDelegate,VungleSDKDelega
     //end iad
     //admob delegate
     
-   
+    //admob delegate
+    //GADBannerViewDelegate
+    func adViewDidReceiveAd(view: GADBannerView!) {
+        println("adViewDidReceiveAd:\(view)");
+        bannerView?.hidden = false
+
+        //relayoutViews()
+    }
+    
+    func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        println("\(view) error:\(error)")
+        bannerView?.hidden = false
+        //relayoutViews()
+    }
+    
+    func adViewWillPresentScreen(adView: GADBannerView!) {
+        println("adViewWillPresentScreen:\(adView)")
+        bannerView?.hidden = false
+
+        //relayoutViews()
+    }
+    
+    func adViewWillLeaveApplication(adView: GADBannerView!) {
+        println("adViewWillLeaveApplication:\(adView)")
+    }
+    
+    func adViewWillDismissScreen(adView: GADBannerView!) {
+        println("adViewWillDismissScreen:\(adView)")
+        
+        // relayoutViews()
+    }
+
 }
