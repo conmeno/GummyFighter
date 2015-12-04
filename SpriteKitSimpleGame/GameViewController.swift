@@ -11,13 +11,13 @@ import SpriteKit
 import iAd
 import GoogleMobileAds
 
-class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDelegate, GADBannerViewDelegate {
+class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewDelegate {
     var UIiAd: ADBannerView = ADBannerView()
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
     
     @IBOutlet weak var txtUDID: UITextView!
-     var vungleSdk = VungleSDK.sharedSDK()
+     //var vungleSdk = VungleSDK.sharedSDK()
       var AdNumber = 1
     var bannerView:GADBannerView?
     //@IBOutlet weak var UDIDlb: UILabel!
@@ -61,7 +61,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
         //            println("Ad is not ready to be shown");
         //        }
         showAds()
-        showAdcolony()
+        //showAdcolony()
     }
 
     
@@ -74,11 +74,11 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
     
     
     @IBAction func MobileCoreFullScreenClick(sender: AnyObject) {
-        showMobilecore();
+        //showMobilecore();
     }
     
     @IBAction func MobileCoreStickeezClick(sender: AnyObject) {
-         MobileCore.showStickeeFromViewController(self)
+         //MobileCore.showStickeeFromViewController(self)
     }
     
     @IBAction func AdmobClick(sender: AnyObject) {
@@ -86,12 +86,12 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
     }
     
     @IBAction func VungleClick(sender: AnyObject) {
-        showVungle()
+       // showVungle()
     }
     
     
     @IBAction func AdcolonyClick(sender: AnyObject) {
-        showAdcolony()
+       // showAdcolony()
     }
     
     @IBAction func RealMoreAppClick(sender: AnyObject) {
@@ -117,23 +117,23 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
         AdNumber++
         println(AdNumber)
     }
-    func showMobilecore()
-    {
-        
-        MobileCore.showInterstitialFromViewController(self, delegate: nil)
-    }
-    func showMobilecore2()
-    {        
-        MobileCore.showStickeeFromViewController(self)
-    }
-    func showAdcolony()
-    {
-        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
-    }
-    func showVungle()
-    {
-        vungleSdk.playAd(self, error: nil)
-    }
+//    func showMobilecore()
+//    {
+//        
+//        MobileCore.showInterstitialFromViewController(self, delegate: nil)
+//    }
+//    func showMobilecore2()
+//    {        
+//        MobileCore.showStickeeFromViewController(self)
+//    }
+//    func showAdcolony()
+//    {
+//        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
+//    }
+//    func showVungle()
+//    {
+//        vungleSdk.playAd(self, error: nil)
+//    }
     
     func ShowAdmobBanner()
     {
@@ -204,14 +204,14 @@ class GameViewController: UIViewController, ADBannerViewDelegate, VungleSDKDeleg
     //show chartboost
     Chartboost.showInterstitial("Home")
     //show vungle
-    vungleSdk.delegate = self
-    vungleSdk.playAd(self, error: nil)
-    //adcolony
-    showAdcolony()
+//    vungleSdk.delegate = self
+//    vungleSdk.playAd(self, error: nil)
+//    //adcolony
+//    showAdcolony()
     
     ShowAdmobBanner()
     
-    showMobilecore2()
+    //showMobilecore2()
   }
   
 //     func gamePoint(point: Int)

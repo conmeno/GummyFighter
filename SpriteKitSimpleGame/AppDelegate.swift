@@ -20,21 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
     
     Chartboost.startWithAppId("55d059c15b14537f68763fbe", appSignature: "f611d0f24a26a598aa32cd0701e2786a5efa1a4f", delegate: self)
     
-    //vungle
-    // Override point for customization after application launch.
-    var appID = "1019089262"
-    var sdk = VungleSDK.sharedSDK()
-    // start vungle publisher library
-    sdk.startWithAppId(appID)
-    sdk.setLoggingEnabled(true)
-    
-    //end vung le
-    //adcolony\
-    AdColony.configureWithAppID("appfdd8cc532b6e4b5d81", zoneIDs: ["vzc1c1b51b68a749f797"], delegate: nil, logging: true)
-    
-     
-    MobileCore.initWithToken("IEO751TSK1E14E2X1RZC6HF5AAVJ", logLevel: DEBUG_LOG_LEVEL, adUnits:
-        [NSNumber (unsignedInt: AD_UNIT_ALL_UNITS.value)])
+//    //vungle
+//    // Override point for customization after application launch.
+//    var appID = "1019089262"
+//    var sdk = VungleSDK.sharedSDK()
+//    // start vungle publisher library
+//    sdk.startWithAppId(appID)
+//    sdk.setLoggingEnabled(true)
+//    
+//    //end vung le
+//    //adcolony\
+//    AdColony.configureWithAppID("appfdd8cc532b6e4b5d81", zoneIDs: ["vzc1c1b51b68a749f797"], delegate: nil, logging: true)
+//    
+//     
+//    MobileCore.initWithToken("IEO751TSK1E14E2X1RZC6HF5AAVJ", logLevel: DEBUG_LOG_LEVEL, adUnits:
+//        [NSNumber (unsignedInt: AD_UNIT_ALL_UNITS.value)])
     return true
   }
 

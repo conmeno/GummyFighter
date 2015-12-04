@@ -102,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     playBackgroundMusic("1.mp3")
     /* Setup your scene here */
-    var background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
+    var background : SKSpriteNode = SKSpriteNode (imageNamed: "firstBG.png")
     background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     background.zPosition = 0.0
     background.alpha = 0.5
