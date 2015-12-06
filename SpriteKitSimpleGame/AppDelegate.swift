@@ -14,27 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
 
   var window: UIWindow?
 
-    var UIiAd: ADBannerView = ADBannerView()
+   // var UIiAd: ADBannerView = ADBannerView()
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    Chartboost.startWithAppId("55d059c15b14537f68763fbe", appSignature: "f611d0f24a26a598aa32cd0701e2786a5efa1a4f", delegate: self)
-    
-//    //vungle
-//    // Override point for customization after application launch.
-//    var appID = "1019089262"
-//    var sdk = VungleSDK.sharedSDK()
-//    // start vungle publisher library
-//    sdk.startWithAppId(appID)
-//    sdk.setLoggingEnabled(true)
-//    
-//    //end vung le
-//    //adcolony\
-//    AdColony.configureWithAppID("appfdd8cc532b6e4b5d81", zoneIDs: ["vzc1c1b51b68a749f797"], delegate: nil, logging: true)
-//    
-//     
-//    MobileCore.initWithToken("IEO751TSK1E14E2X1RZC6HF5AAVJ", logLevel: DEBUG_LOG_LEVEL, adUnits:
-//        [NSNumber (unsignedInt: AD_UNIT_ALL_UNITS.value)])
+    Chartboost.startWithAppId("5662ac562fdf34660e06b864", appSignature: "bd877533a3a8e42dffb974cdef3b073f9ff55b82", delegate: self)
+ 
+ 
     return true
   }
 

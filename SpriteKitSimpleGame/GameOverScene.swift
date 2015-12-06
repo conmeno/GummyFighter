@@ -45,8 +45,8 @@ class GameOverScene: SKScene {
   init(size: CGSize, won:Bool) {
     
     super.init(size: size)
-    UIiAd = self.appdelegate().UIiAd
-    UIiAd.alpha = 1
+//    UIiAd = self.appdelegate().UIiAd
+//    UIiAd.alpha = 1
     
     // 1
     backgroundColor = SKColor.whiteColor()

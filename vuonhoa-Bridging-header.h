@@ -12,6 +12,11 @@
 //#import <CommonCrypto/CommonDigest.h>
 //#import <AdSupport/AdSupport.h>
 //#import <MobileCore/MobileCore.h>
+
+#include <ifaddrs.h>
+#import "Test.h"
+
+
 #ifndef vuonhoaphatgiao_vuonhoa_Bridging_header_h
 #define vuonhoaphatgiao_vuonhoa_Bridging_header_h
 

@@ -80,7 +80,7 @@ struct PhysicsCategory {
 //}
 
 
-import iAd
+//import iAd
 class GameScene: SKScene, SKPhysicsContactDelegate {
   
    var UIiAd: ADBannerView = ADBannerView()
@@ -95,14 +95,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
   override func didMoveToView(view: SKView) {
     
-    UIiAd = self.appdelegate().UIiAd
-    UIiAd.alpha = 0
+//    UIiAd = self.appdelegate().UIiAd
+//    UIiAd.alpha = 0
     
 
     
     playBackgroundMusic("1.mp3")
     /* Setup your scene here */
-    var background : SKSpriteNode = SKSpriteNode (imageNamed: "firstBG.png")
+    var background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
     background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     background.zPosition = 0.0
     background.alpha = 0.5

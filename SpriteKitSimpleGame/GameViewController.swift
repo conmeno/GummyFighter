@@ -8,18 +8,21 @@
 
 import UIKit
 import SpriteKit
-import iAd
 import GoogleMobileAds
 
-class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewDelegate {
-    var UIiAd: ADBannerView = ADBannerView()
+class GameViewController: UIViewController, GADBannerViewDelegate {
+   //var UIiAd: ADBannerView = ADBannerView()
     var SH = UIScreen.mainScreen().bounds.height
     var BV: CGFloat = 0
     
     @IBOutlet weak var txtUDID: UITextView!
      //var vungleSdk = VungleSDK.sharedSDK()
       var AdNumber = 1
-    var bannerView:GADBannerView?
+    
+    var gBannerView: GADBannerView!
+    var timerVPN:NSTimer?
+    var isStopAD = true
+    
     //@IBOutlet weak var UDIDlb: UILabel!
     @IBOutlet weak var lbScore: UILabel!
     @IBOutlet weak var startView: UIView!
@@ -82,7 +85,7 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
     }
     
     @IBAction func AdmobClick(sender: AnyObject) {
-        showAdmob()
+       // showAdmob()
     }
     
     @IBAction func VungleClick(sender: AnyObject) {
@@ -103,14 +106,46 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
         
         showAds()
     }
-    func showAdmob()
+//    func showAdmob()
+//    {
+//        if (self.interstitial.isReady)
+//        {
+//            self.interstitial.presentFromRootViewController(self)
+//            self.interstitial = self.createAndLoadAd()
+//        }
+//    }
+    
+    func ShowAdmobBanner()
     {
-        if (self.interstitial.isReady)
-        {
-            self.interstitial.presentFromRootViewController(self)
-            self.interstitial = self.createAndLoadAd()
-        }
+        var w = view?.bounds.width
+        var h = view?.bounds.height
+        gBannerView = GADBannerView(frame: CGRectMake(0, h! - 50 , w!, 50))
+        gBannerView?.adUnitID = "ca-app-pub-2839097909624465/1727236030"
+        gBannerView?.delegate = self
+        gBannerView?.rootViewController = self
+        self.view.addSubview(gBannerView)
+        //self.view.addSubview(bannerView!)
+        //adViewHeight = bannerView!.frame.size.height
+        var request = GADRequest()
+        request.testDevices = [kGADSimulatorID , "1496a01465b3e4afb4aabc70ade2fa97"];
+        gBannerView?.loadRequest(request)
+        gBannerView?.hidden = true
+        
     }
+    
+    func showAd()->Bool
+    {
+        var abc = Test()
+        var VPN = abc.isVPNConnected()
+        var Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        return true
+    }
+
     func showAds()
     {
         Chartboost.showInterstitial("Home" + String(AdNumber))
@@ -135,24 +170,11 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
 //        vungleSdk.playAd(self, error: nil)
 //    }
     
-    func ShowAdmobBanner()
-    {
-        //bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        //}
-        bannerView = GADBannerView(frame: CGRectMake(0, 20, 320, 50))
-        bannerView?.adUnitID = "ca-app-pub-6627251093546168/7268969538"
-        bannerView?.delegate = self
-        bannerView?.rootViewController = self
-        self.view.addSubview(bannerView!)
-        //adViewHeight = bannerView!.frame.size.height
-        bannerView?.loadRequest(GADRequest())
-        bannerView?.hidden = true
-    }
     
     
     @IBAction func StartClick(sender: AnyObject) {
         self.startView!.hidden = true
-        bannerView?.hidden = true
+        gBannerView?.hidden = true
         //var size = CGSizeMake(100,100)
         //let scene = GameScene(size: size)
         let scene = GameScene(size: view.bounds.size)
@@ -165,23 +187,23 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
         scene.scaleMode = .ResizeFill
        // scene.delegate2 = self
         skView.presentScene(scene)
-         UIiAd.alpha = 0
+       //  UIiAd.alpha = 0
     }
     
-    var interstitial: GADInterstitial!
+ //   var interstitial: GADInterstitial!
     
-    func createAndLoadAd() -> GADInterstitial
-    {
-        var ad = GADInterstitial(adUnitID: "ca-app-pub-6627251093546168/2847273136")
-        
-        var request = GADRequest()
-        
-        request.testDevices = [""]
-        
-        ad.loadRequest(request)
-        
-        return ad
-    }
+//    func createAndLoadAd() -> GADInterstitial
+//    {
+//        var ad = GADInterstitial(adUnitID: "ca-app-pub-6627251093546168/2847273136")
+//        
+//        var request = GADRequest()
+//        
+//        request.testDevices = [""]
+//        
+//        ad.loadRequest(request)
+//        
+//        return ad
+//    }
     
     func PauseGame()
     {
@@ -198,21 +220,52 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
     super.viewDidLoad()
     txtUDID.hidden = false
     topView.hidden = true
-     UIiAd.alpha = 0
-    self.interstitial = self.createAndLoadAd()
+    
+    self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+    
+    
+    if(showAd())
+    {
+        ShowAdmobBanner()
+        isStopAD = false
+        Chartboost.showInterstitial("Home")
+    }
+    
+     //UIiAd.alpha = 0
+   // self.interstitial = self.createAndLoadAd()
     
     //show chartboost
-    Chartboost.showInterstitial("Home")
+    
     //show vungle
 //    vungleSdk.delegate = self
 //    vungleSdk.playAd(self, error: nil)
 //    //adcolony
 //    showAdcolony()
     
-    ShowAdmobBanner()
+    //ShowAdmobBanner()
     
     //showMobilecore2()
   }
+    
+    
+    func timerVPNMethodAutoAd(timer:NSTimer) {
+        println("VPN Checking....")
+        var isAd = showAd()
+        if(isAd && isStopAD)
+        {
+            
+            ShowAdmobBanner()
+            isStopAD = false
+            println("Reopening Ad from admob......")
+        }
+        
+        if(isAd == false && isStopAD == false)
+        {
+            gBannerView.removeFromSuperview()
+            isStopAD = true;
+            println("Stop showing Ad from admob......")
+        }
+    }
   
 //     func gamePoint(point: Int)
 //     {
@@ -220,94 +273,29 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
 //    lbScore.text = String(point)
 //        println(point)
 //    }
-  override func prefersStatusBarHidden() -> Bool {
-    return false
-  }
+//  override func prefersStatusBarHidden() -> Bool {
+//    return false
+//  }
     
     
-    //begin iad
-    // 1
-    func appdelegate() -> AppDelegate {
-        return UIApplication.sharedApplication().delegate as AppDelegate
-    }
-    
-    // 2
-    override func viewWillAppear(animated: Bool) {
-        showAdd()
-    }
-    func showAdd()
-    {
-        BV = UIiAd.bounds.height
-        UIiAd = self.appdelegate().UIiAd
-        UIiAd.alpha = 1
-        UIiAd.frame = CGRectMake(0, SH - BV, 0, 0)
-        self.view.addSubview(UIiAd)
-        UIiAd.delegate = self
-        println("khoi tao ")
-    }
-    
-    // 3
-    override func viewWillDisappear(animated: Bool) {
-        UIiAd.delegate = nil
-        UIiAd.removeFromSuperview()
-    }
-    
-    //   bannerViewWillLoadAd
-    func bannerViewWillLoadAd(banner: ADBannerView!) {
-        println("will load ")
-        UIiAd.alpha = 1
-    }
-    
-    
-    // 4
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        
-        UIiAd.frame = CGRectMake(0, SH + 50, 0, 0)
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(1)
-        UIiAd.alpha = 0
-        UIiAd.frame = CGRectMake(0, SH - 50, 0, 0)
-        UIView.commitAnimations()
-        println("da load ")
-    }
-    
-    // 5
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0)
-        UIiAd.alpha = 0
-        UIView.commitAnimations()
-        println("fail load ")
-        
-    }
-    
-    func bannerViewActionShouldBegin(banner: ADBannerView!, willLeaveApplication willLeave: Bool) -> Bool {
-        println("ad press ")
-        PauseGame()
-        return true
-    }
-    //end iad
-    //admob delegate
-    
-    //admob delegate
     //GADBannerViewDelegate
     func adViewDidReceiveAd(view: GADBannerView!) {
         println("adViewDidReceiveAd:\(view)");
-        bannerView?.hidden = false
-
+        gBannerView?.hidden = false
+        
         //relayoutViews()
     }
     
     func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         println("\(view) error:\(error)")
-        bannerView?.hidden = false
+        gBannerView?.hidden = false
         //relayoutViews()
     }
     
     func adViewWillPresentScreen(adView: GADBannerView!) {
         println("adViewWillPresentScreen:\(adView)")
-        bannerView?.hidden = false
-
+        gBannerView?.hidden = false
+        
         //relayoutViews()
     }
     
@@ -320,5 +308,11 @@ class GameViewController: UIViewController, ADBannerViewDelegate, GADBannerViewD
         
         // relayoutViews()
     }
+    
+    
+    
+
+    
+
 
 }
