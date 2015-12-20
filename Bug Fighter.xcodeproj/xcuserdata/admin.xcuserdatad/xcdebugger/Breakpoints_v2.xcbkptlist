@@ -54,11 +54,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpriteKitSimpleGame/GameViewController.swift"
-            timestampString = "470983477.638011"
+            timestampString = "472265678.193225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>

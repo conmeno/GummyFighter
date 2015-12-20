@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GoogleMobileAds
+ 
 
 class GameViewController: UIViewController, GADBannerViewDelegate {
    //var UIiAd: ADBannerView = ADBannerView()
@@ -30,13 +31,38 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet weak var topView: UIView!
     
+    //new funciton
+        @IBOutlet weak var AdmobCheck: UISwitch!
+    
+    @IBOutlet weak var ChartboostCheck: UISwitch!
+    
+    var isAdmob = true;
+    
+    var isChart = false
+    
+    var isShowFullAdmob = false
+    var isShowChartboostFirst = false
+    var timerAdmobFull:NSTimer?
+    @IBOutlet weak var textDevice: UITextView!
+    //end new funciton
+    
+    
     @IBAction func MoreGameDrag(sender: AnyObject) {
         
         
-        let dev = UIDevice.currentDevice().identifierForVendor.UUIDString
-        
-        txtUDID.text = dev
         topView.hidden = false
+        
+        var myIDFA: String = ""
+        // Check if Advertising Tracking is Enabled
+        if ASIdentifierManager.sharedManager().advertisingTrackingEnabled {
+            // Set the IDFA
+            myIDFA = ASIdentifierManager.sharedManager().advertisingIdentifier.UUIDString
+        }
+        
+        let venderID = UIDevice.currentDevice().identifierForVendor!.UUIDString
+       
+        
+        textDevice.text = "IDFA: \n" + myIDFA + "\nVendorID: \n" + venderID
     }
     
     @IBAction func СloseClick(sender: AnyObject) {
@@ -75,59 +101,59 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
 
     }
     
+
     
-    @IBAction func MobileCoreFullScreenClick(sender: AnyObject) {
-        //showMobilecore();
-    }
-    
-    @IBAction func MobileCoreStickeezClick(sender: AnyObject) {
-         //MobileCore.showStickeeFromViewController(self)
-    }
-    
-    @IBAction func AdmobClick(sender: AnyObject) {
-       // showAdmob()
-    }
-    
-    @IBAction func VungleClick(sender: AnyObject) {
-       // showVungle()
-    }
-    
-    
-    @IBAction func AdcolonyClick(sender: AnyObject) {
-       // showAdcolony()
-    }
-    
-    @IBAction func RealMoreAppClick(sender: AnyObject) {
-        var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
-        UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
-    }
+//    @IBAction func AdcolonyClick(sender: AnyObject) {
+//       // showAdcolony()
+//    }
+//    
+//    @IBAction func RealMoreAppClick(sender: AnyObject) {
+//        var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
+//        UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
+//    }
     
     @IBAction func showAdClick(sender: AnyObject) {
         
         showAds()
     }
-//    func showAdmob()
-//    {
-//        if (self.interstitial.isReady)
-//        {
-//            self.interstitial.presentFromRootViewController(self)
-//            self.interstitial = self.createAndLoadAd()
-//        }
-//    }
+ 
+    var interstitial: GADInterstitial!
+    
+    func createAndLoadAd() -> GADInterstitial
+    {
+        var ad = GADInterstitial(adUnitID: "ca-app-pub-2807486494925046/8605351218")
+        
+        var request = GADRequest()
+        
+        request.testDevices = [kGADSimulatorID, "6aa57fc4161001786a1a9e7cea470364"]
+        
+        ad.loadRequest(request)
+        
+        return ad
+    }
+    func showAdmob()
+    {
+        if (self.interstitial.isReady)
+        {
+            self.interstitial.presentFromRootViewController(self)
+            self.interstitial = self.createAndLoadAd()
+        }
+    }
+
     
     func ShowAdmobBanner()
     {
         var w = view?.bounds.width
         var h = view?.bounds.height
         gBannerView = GADBannerView(frame: CGRectMake(0, h! - 50 , w!, 50))
-        gBannerView?.adUnitID = "ca-app-pub-2839097909624465/1727236030"
+        gBannerView?.adUnitID = "ca-app-pub-2807486494925046/7128618012"
         gBannerView?.delegate = self
         gBannerView?.rootViewController = self
         self.view.addSubview(gBannerView)
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "1496a01465b3e4afb4aabc70ade2fa97"];
+        request.testDevices = [kGADSimulatorID , "6aa57fc4161001786a1a9e7cea470364"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -152,24 +178,6 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         AdNumber++
         println(AdNumber)
     }
-//    func showMobilecore()
-//    {
-//        
-//        MobileCore.showInterstitialFromViewController(self, delegate: nil)
-//    }
-//    func showMobilecore2()
-//    {        
-//        MobileCore.showStickeeFromViewController(self)
-//    }
-//    func showAdcolony()
-//    {
-//        AdColony.playVideoAdForZone("vzc1c1b51b68a749f797", withDelegate: nil)
-//    }
-//    func showVungle()
-//    {
-//        vungleSdk.playAd(self, error: nil)
-//    }
-    
     
     
     @IBAction func StartClick(sender: AnyObject) {
@@ -190,20 +198,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
        //  UIiAd.alpha = 0
     }
     
- //   var interstitial: GADInterstitial!
-    
-//    func createAndLoadAd() -> GADInterstitial
-//    {
-//        var ad = GADInterstitial(adUnitID: "ca-app-pub-6627251093546168/2847273136")
-//        
-//        var request = GADRequest()
-//        
-//        request.testDevices = [""]
-//        
-//        ad.loadRequest(request)
-//        
-//        return ad
-//    }
+
     
     func PauseGame()
     {
@@ -218,35 +213,107 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    txtUDID.hidden = false
+     
+     
     topView.hidden = true
     
-    self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
     
-    
+    CheckAdOptionValue()
     if(showAd())
     {
         ShowAdmobBanner()
+        if(isAdmob)
+        {
+            
+            self.interstitial = self.createAndLoadAd()
+        }
         isStopAD = false
-        Chartboost.showInterstitial("Home")
     }
     
-     //UIiAd.alpha = 0
-   // self.interstitial = self.createAndLoadAd()
     
-    //show chartboost
     
-    //show vungle
-//    vungleSdk.delegate = self
-//    vungleSdk.playAd(self, error: nil)
-//    //adcolony
-//    showAdcolony()
     
-    //ShowAdmobBanner()
     
-    //showMobilecore2()
+    self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(20, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+    self.timerAdmobFull = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timerAdmobFull:", userInfo: nil, repeats: true)
+  
+    
+ 
   }
+    func CheckAdOptionValue()
+    {
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("Admob") != nil)
+        {
+            isAdmob = NSUserDefaults.standardUserDefaults().objectForKey("Admob") as Bool
+            
+        }
+        
+//        
+//        if(NSUserDefaults.standardUserDefaults().objectForKey("Amazon") != nil)
+//        {
+//            isAmazon = NSUserDefaults.standardUserDefaults().objectForKey("Amazon") as Bool
+//            
+//        }
+//        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("Chart") != nil)
+        {
+            isChart = NSUserDefaults.standardUserDefaults().objectForKey("Chart") as Bool
+            
+        }
+        AdmobCheck.on = isAdmob
+        
+        ChartboostCheck.on = isChart
+    }
+    //Save ADOption
+    @IBAction func GoogleChange(sender: UISwitch) {
+        //if(AdmobCheck.on)
+        //{
+        println(sender.on)
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Admob")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        isAdmob = sender.on
+        //
+        // }
+        
+    }
+ 
     
+    @IBAction func СhartBoostChanged(sender: UISwitch) {
+        println(sender.on)
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Chart")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        isChart = sender.on
+        
+    }
+    func timerAdmobFull(timer:NSTimer) {
+        //var isShowFullAdmob = false
+        //var isShowFllAmazon = false
+        //var isShowChartboostFirst = false
+        if(isChart && isShowChartboostFirst == false)
+        {
+            
+            Chartboost.showInterstitial("First stage")
+            isShowChartboostFirst = true;
+            //timerAdmobFull?.invalidate()
+            
+            
+        }
+        if(isAdmob && isShowFullAdmob == false)
+        {
+            
+            if(self.interstitial.isReady)
+            {
+                showAdmob()
+                //timerAdmobFull?.invalidate()
+                isShowFullAdmob = true;
+            }
+        }
+        
+        
+        
+    }
     
     func timerVPNMethodAutoAd(timer:NSTimer) {
         println("VPN Checking....")
