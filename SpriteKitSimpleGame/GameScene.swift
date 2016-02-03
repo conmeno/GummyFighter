@@ -15,25 +15,27 @@ func playBackgroundMusic(filename: String) {
   let url = NSBundle.mainBundle().URLForResource(
     filename, withExtension: nil)
   if (url == nil) {
-    println("Could not find file: \(filename)")
+    print("Could not find file: \(filename)")
     return
   }
 
-  var error: NSError? = nil
-  backgroundMusicPlayer = 
-    AVAudioPlayer(contentsOfURL: url, error: &error)
-  if backgroundMusicPlayer == nil {
-    println("Could not create audio player: \(error!)")
-    return
-  }
-
-  backgroundMusicPlayer.numberOfLoops = -1
-  backgroundMusicPlayer.prepareToPlay()
-  backgroundMusicPlayer.play()
+  //var error: NSError? = nil
+    
+            backgroundMusicPlayer =  try! AVAudioPlayer(contentsOfURL: url!)
+            if backgroundMusicPlayer == nil {
+                // print("Could not create audio player: \(error!)")
+                return
+            }
+            
+            backgroundMusicPlayer.numberOfLoops = -1
+            backgroundMusicPlayer.prepareToPlay()
+            backgroundMusicPlayer.play()
+       
+  
 }
 
 import SpriteKit
-import iAd
+
 
 func + (left: CGPoint, right: CGPoint) -> CGPoint {
   return CGPoint(x: left.x + right.x, y: left.y + right.y)
@@ -83,7 +85,7 @@ struct PhysicsCategory {
 //import iAd
 class GameScene: SKScene, SKPhysicsContactDelegate {
   
-   var UIiAd: ADBannerView = ADBannerView()
+   //var UIiAd: ADBannerView = ADBannerView()
   let player = SKSpriteNode(imageNamed: "player")
   var monstersDestroyed = 0
   //var delegate2:SwiftrisDelegate?
@@ -91,7 +93,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func appdelegate() -> AppDelegate {
-        return UIApplication.sharedApplication().delegate as AppDelegate
+        return UIApplication.sharedApplication().delegate as! AppDelegate
     }
   override func didMoveToView(view: SKView) {
     
@@ -102,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     playBackgroundMusic("1.mp3")
     /* Setup your scene here */
-    var background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
+    let background : SKSpriteNode = SKSpriteNode (imageNamed: "b1.png")
     background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2)
     background.zPosition = 0.0
     background.alpha = 0.5
@@ -117,7 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     physicsWorld.contactDelegate = self
     
     addMonster()
-    println("Moi")
+    print("Moi")
     //add score
     
     lbScore.text = "0"
@@ -140,7 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
   }
 
-  func random(#min: CGFloat, max: CGFloat) -> CGFloat {
+  func random(min min: CGFloat, max: CGFloat) -> CGFloat {
     return random() * (max - min) + min
   }
 
@@ -179,12 +181,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
   }
   
-  override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+  //override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override  func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
     runAction(SKAction.playSoundFileNamed("buzz2.mp3", waitForCompletion: false))
 
     // 1 - Choose one of the touches to work with
-    let touch = touches.anyObject() as UITouch
+    let touch = touches.first! as UITouch
     let touchLocation = touch.locationInNode(self)
     
     // 2 - Set up initial location of projectile
@@ -224,7 +227,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
   }
   
   func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
-    println("Hit")
+    print("Hit")
     projectile.removeFromParent()
     monster.removeFromParent()
     
@@ -256,7 +259,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // 2
     if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
         (secondBody.categoryBitMask & PhysicsCategory.Projectile != 0)) {
-      projectileDidCollideWithMonster(firstBody.node as SKSpriteNode, monster: secondBody.node as SKSpriteNode)
+      projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
     }
     
   }

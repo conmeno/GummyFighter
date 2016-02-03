@@ -80,7 +80,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     }
     
     func timerMethodAutoAd(timer:NSTimer) {
-        println("auto play")
+        print("auto play")
         topView.backgroundColor = UIColor.redColor()
         //        if (AdTapsy.isAdReadyToShow()) {
         //            println("Ad is ready to be shown");
@@ -96,7 +96,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     @IBAction func MoreGameClick(sender: AnyObject) {
        //topView.hidden = false
-        var barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
+        let barsLink : String = "itms-apps://itunes.apple.com/us/artist/phuong-thanh-nguyen/id1019089261"
         UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
 
     }
@@ -121,9 +121,9 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     func createAndLoadAd() -> GADInterstitial
     {
-        var ad = GADInterstitial(adUnitID: "ca-app-pub-2807486494925046/8605351218")
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-2807486494925046/8605351218")
         
-        var request = GADRequest()
+        let request = GADRequest()
         
         request.testDevices = [kGADSimulatorID, "6aa57fc4161001786a1a9e7cea470364"]
         
@@ -143,8 +143,8 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     func ShowAdmobBanner()
     {
-        var w = view?.bounds.width
-        var h = view?.bounds.height
+        let w = view?.bounds.width
+        let h = view?.bounds.height
         gBannerView = GADBannerView(frame: CGRectMake(0, h! - 50 , w!, 50))
         gBannerView?.adUnitID = "ca-app-pub-2807486494925046/7128618012"
         gBannerView?.delegate = self
@@ -152,7 +152,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         self.view.addSubview(gBannerView)
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
-        var request = GADRequest()
+        let request = GADRequest()
         request.testDevices = [kGADSimulatorID , "6aa57fc4161001786a1a9e7cea470364"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
@@ -161,9 +161,9 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     func showAd()->Bool
     {
-        var abc = Test()
-        var VPN = abc.isVPNConnected()
-        var Version = abc.platformNiceString()
+        let abc = Test()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
         if(VPN == false && Version == "CDMA")
         {
             return false
@@ -176,7 +176,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     {
         Chartboost.showInterstitial("Home" + String(AdNumber))
         AdNumber++
-        println(AdNumber)
+        print(AdNumber)
     }
     
     
@@ -187,7 +187,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         //let scene = GameScene(size: size)
         let scene = GameScene(size: view.bounds.size)
         
-        let skView = view as SKView
+        let skView = view as! SKView
         
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
@@ -245,7 +245,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("Admob") != nil)
         {
-            isAdmob = NSUserDefaults.standardUserDefaults().objectForKey("Admob") as Bool
+            isAdmob = NSUserDefaults.standardUserDefaults().objectForKey("Admob") as! Bool
             
         }
         
@@ -253,13 +253,13 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
 //        if(NSUserDefaults.standardUserDefaults().objectForKey("Amazon") != nil)
 //        {
 //            isAmazon = NSUserDefaults.standardUserDefaults().objectForKey("Amazon") as Bool
-//            
+//
 //        }
 //        
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("Chart") != nil)
         {
-            isChart = NSUserDefaults.standardUserDefaults().objectForKey("Chart") as Bool
+            isChart = NSUserDefaults.standardUserDefaults().objectForKey("Chart") as! Bool
             
         }
         AdmobCheck.on = isAdmob
@@ -270,7 +270,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     @IBAction func GoogleChange(sender: UISwitch) {
         //if(AdmobCheck.on)
         //{
-        println(sender.on)
+        print(sender.on)
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Admob")
         NSUserDefaults.standardUserDefaults().synchronize()
         isAdmob = sender.on
@@ -281,7 +281,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
  
     
     @IBAction func СhartBoostChanged(sender: UISwitch) {
-        println(sender.on)
+        print(sender.on)
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Chart")
         NSUserDefaults.standardUserDefaults().synchronize()
         isChart = sender.on
@@ -316,21 +316,21 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     }
     
     func timerVPNMethodAutoAd(timer:NSTimer) {
-        println("VPN Checking....")
-        var isAd = showAd()
+        print("VPN Checking....")
+        let isAd = showAd()
         if(isAd && isStopAD)
         {
             
             ShowAdmobBanner()
             isStopAD = false
-            println("Reopening Ad from admob......")
+            print("Reopening Ad from admob......")
         }
         
         if(isAd == false && isStopAD == false)
         {
             gBannerView.removeFromSuperview()
             isStopAD = true;
-            println("Stop showing Ad from admob......")
+            print("Stop showing Ad from admob......")
         }
     }
   
@@ -347,31 +347,31 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     //GADBannerViewDelegate
     func adViewDidReceiveAd(view: GADBannerView!) {
-        println("adViewDidReceiveAd:\(view)");
+        print("adViewDidReceiveAd:\(view)");
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        println("\(view) error:\(error)")
+        print("\(view) error:\(error)")
         gBannerView?.hidden = false
         //relayoutViews()
     }
     
     func adViewWillPresentScreen(adView: GADBannerView!) {
-        println("adViewWillPresentScreen:\(adView)")
+        print("adViewWillPresentScreen:\(adView)")
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adViewWillLeaveApplication(adView: GADBannerView!) {
-        println("adViewWillLeaveApplication:\(adView)")
+        print("adViewWillLeaveApplication:\(adView)")
     }
     
     func adViewWillDismissScreen(adView: GADBannerView!) {
-        println("adViewWillDismissScreen:\(adView)")
+        print("adViewWillDismissScreen:\(adView)")
         
         // relayoutViews()
     }

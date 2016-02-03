@@ -23,14 +23,14 @@ class GameOverScene: SKScene {
         self.addChild(button)
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Loop over all the touches in this event
         for touch: AnyObject in touches {
             // Get the location of the touch in this scene
             let location = touch.locationInNode(self)
             // Check if the location of the touch is within the button's bounds
             if button.containsPoint(location) {
-                println("tapped!")
+                print("tapped!")
                 let reveal = SKTransition.flipHorizontalWithDuration(0.5)
                 let scene = GameScene(size: size)
                 self.view?.presentScene(scene, transition:reveal)
@@ -40,7 +40,7 @@ class GameOverScene: SKScene {
         }
     }
     func appdelegate() -> AppDelegate {
-        return UIApplication.sharedApplication().delegate as AppDelegate
+        return UIApplication.sharedApplication().delegate as! AppDelegate
     }
   init(size: CGSize, won:Bool) {
     

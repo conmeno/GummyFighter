@@ -33,8 +33,6 @@
 		84A1AD751B560B2400884A7D /* b1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A1AD741B560B2400884A7D /* b1.png */; };
 		84A4D2111C12A0E200E14AA8 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A4D2101C12A0E100E14AA8 /* Test.m */; };
 		84AB9DDF1B8076C900F3D96B /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DDE1B8076C900F3D96B /* Chartboost.framework */; };
-		84AB9DE31B80779100F3D96B /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DE11B80779100F3D96B /* libsqlite3.0.dylib */; };
-		84AB9DE41B80779100F3D96B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DE21B80779100F3D96B /* libsqlite3.dylib */; };
 		84AB9DE61B8077BA00F3D96B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DE51B8077BA00F3D96B /* CFNetwork.framework */; };
 		84AB9DE81B8077C600F3D96B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DE71B8077C600F3D96B /* QuartzCore.framework */; };
 		84AB9DEC1B80780600F3D96B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DE91B80780600F3D96B /* CoreAudio.framework */; };
@@ -46,9 +44,10 @@
 		84AB9DF61B8089B500F3D96B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DF51B8089B500F3D96B /* MediaPlayer.framework */; };
 		84AB9DF81B8089DC00F3D96B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DF71B8089DC00F3D96B /* Security.framework */; };
 		84AB9DFA1B8089EC00F3D96B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DF91B8089EC00F3D96B /* UIKit.framework */; };
-		84AB9DFC1B808ADB00F3D96B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DFB1B808ADB00F3D96B /* libz.dylib */; };
 		84E24DDB1B54D4F10006C070 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDA1B54D4F10006C070 /* 1.mp3 */; };
 		84E24DDD1B54D50B0006C070 /* buzz2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDC1B54D50B0006C070 /* buzz2.mp3 */; };
+		96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */; };
+		96DD2D141C61F7CF0053EDF7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +93,6 @@
 		84A4D2101C12A0E100E14AA8 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		84AB9DDE1B8076C900F3D96B /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		84AB9DE01B8076F100F3D96B /* vuonhoa-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vuonhoa-Bridging-header.h"; sourceTree = "<group>"; };
-		84AB9DE11B80779100F3D96B /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		84AB9DE21B80779100F3D96B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		84AB9DE51B8077BA00F3D96B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		84AB9DE71B8077C600F3D96B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84AB9DE91B80780600F3D96B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -107,9 +104,10 @@
 		84AB9DF51B8089B500F3D96B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84AB9DF71B8089DC00F3D96B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		84AB9DF91B8089EC00F3D96B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		84AB9DFB1B808ADB00F3D96B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		84E24DDA1B54D4F10006C070 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		84E24DDC1B54D50B0006C070 /* buzz2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzz2.mp3; sourceTree = "<group>"; };
+		96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +115,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */,
+				96DD2D141C61F7CF0053EDF7 /* libsqlite3.tbd in Frameworks */,
 				8433660B1B660FD100058193 /* AdSupport.framework in Frameworks */,
 				84AB9DE61B8077BA00F3D96B /* CFNetwork.framework in Frameworks */,
-				84AB9DFC1B808ADB00F3D96B /* libz.dylib in Frameworks */,
 				84AB9DFA1B8089EC00F3D96B /* UIKit.framework in Frameworks */,
 				84AB9DF81B8089DC00F3D96B /* Security.framework in Frameworks */,
 				84AB9DF61B8089B500F3D96B /* MediaPlayer.framework in Frameworks */,
@@ -135,8 +134,6 @@
 				84AB9DE81B8077C600F3D96B /* QuartzCore.framework in Frameworks */,
 				843365FE1B660FAB00058193 /* EventKit.framework in Frameworks */,
 				843365FF1B660FAB00058193 /* EventKitUI.framework in Frameworks */,
-				84AB9DE31B80779100F3D96B /* libsqlite3.0.dylib in Frameworks */,
-				84AB9DE41B80779100F3D96B /* libsqlite3.dylib in Frameworks */,
 				843366051B660FC000058193 /* CoreGraphics.framework in Frameworks */,
 				843366031B660FBA00058193 /* CoreMedia.framework in Frameworks */,
 				843366011B660FB200058193 /* CoreTelephony.framework in Frameworks */,
@@ -160,9 +157,10 @@
 		357164D619DB1E4800ED38A9 = {
 			isa = PBXGroup;
 			children = (
+				96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */,
+				96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */,
 				84A4D20F1C12A0E100E14AA8 /* Test.h */,
 				84A4D2101C12A0E100E14AA8 /* Test.m */,
-				84AB9DFB1B808ADB00F3D96B /* libz.dylib */,
 				84AB9DF91B8089EC00F3D96B /* UIKit.framework */,
 				84AB9DF71B8089DC00F3D96B /* Security.framework */,
 				84AB9DF51B8089B500F3D96B /* MediaPlayer.framework */,
@@ -174,8 +172,6 @@
 				84AB9DEB1B80780600F3D96B /* CoreLocation.framework */,
 				84AB9DE71B8077C600F3D96B /* QuartzCore.framework */,
 				84AB9DE51B8077BA00F3D96B /* CFNetwork.framework */,
-				84AB9DE11B80779100F3D96B /* libsqlite3.0.dylib */,
-				84AB9DE21B80779100F3D96B /* libsqlite3.dylib */,
 				84AB9DE01B8076F100F3D96B /* vuonhoa-Bridging-header.h */,
 				84AB9DDE1B8076C900F3D96B /* Chartboost.framework */,
 				8433660A1B660FD100058193 /* AdSupport.framework */,
@@ -303,6 +299,7 @@
 		357164D719DB1E4800ED38A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = PhuongNguyen;
 				TargetAttributes = {
@@ -496,6 +493,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -517,6 +515,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
