@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
    // var UIiAd: ADBannerView = ADBannerView()
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
-    
-    Chartboost.startWithAppId("567523942fdf347c72b480f8", appSignature: "66c4b69dd4a914732710c2b588cab6c976523179", delegate: self)
+    let data = Data()
+    Chartboost.startWithAppId(data.cAppID, appSignature: data.cSign, delegate: self)
  
  
     return true

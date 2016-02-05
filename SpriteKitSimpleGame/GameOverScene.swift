@@ -8,11 +8,11 @@
 
 import Foundation
 import SpriteKit
-import iAd
+
 
 class GameOverScene: SKScene {
     var button: SKNode! = nil
-   var UIiAd: ADBannerView = ADBannerView()
+   //var UIiAd: ADBannerView = ADBannerView()
     
     override func didMoveToView(view: SKView) {
         // Create a simple red rectangle that's 100x44
@@ -34,7 +34,7 @@ class GameOverScene: SKScene {
                 let reveal = SKTransition.flipHorizontalWithDuration(0.5)
                 let scene = GameScene(size: size)
                 self.view?.presentScene(scene, transition:reveal)
-                 UIiAd.alpha = 0
+                 //UIiAd.alpha = 0
 
             }
         }
@@ -52,7 +52,7 @@ class GameOverScene: SKScene {
     backgroundColor = SKColor.whiteColor()
     
     // 2
-    var message = won ? "You Won!" : "You Lose =]]"
+    let message = won ? "You Won!" : "You Lose =]]"
     
     // 3
     let label = SKLabelNode(fontNamed: "Chalkduster")
