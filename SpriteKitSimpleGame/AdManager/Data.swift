@@ -12,13 +12,15 @@ class Data {
     
     //Ladybug
     
-        let gBanner : String = "ca-app-pub-2839097909624465/1727236030"
-        let gFull : String = ""
+        let gBanner : String = "ca-app-pub-2807486494925046/7128618012"
+        let gFull : String = "ca-app-pub-2807486494925046/8605351218"
         let TestDeviceID: String = "25229a4d09c90bcec58dec27036a470b"
-        let cAppID: String = "56c0492743150f367e8eb852"
-        let cSign : String = "5db0ad5e2dfae40d89be71221db0d6774cc6c54c"
+        let cAppID: String = "56c068b6c909a63c5e114084"
+        let cSign : String = "caa77ad782badc9682a320901babef691e5ef143"
     
-   let AmazonKey: String = "aa6db4cc934c4e55b84a098571fbca8c"
+   let AmazonKey: String = "001b8cf374ba46a3bf1405d5f06fc975"
+    
+   
     
     
     

@@ -15,8 +15,8 @@ class AdManagerView: UIViewController
 {
     
     
-    var isAd1 = false//admob full
-    var isAd2 = false//charbootst
+    var isAd1 = true//admob full
+    var isAd2 = true//charbootst
     var isAd3 = false//auto chartboost
     var isAd4 = true//admob banner
     var isAd5 = false//adcolony

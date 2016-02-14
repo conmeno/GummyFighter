@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-               BuildableName = "Ladybug Fighter.app"
-               BlueprintName = "Ladybug Fighter"
-               ReferencedContainer = "container:Ladybug Fighter.xcodeproj">
+               BuildableName = "Bug Fighter.app"
+               BlueprintName = "Bug Fighter"
+               ReferencedContainer = "container:Bug Fighter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Ladybug Fighter.app"
-            BlueprintName = "Ladybug Fighter"
-            ReferencedContainer = "container:Ladybug Fighter.xcodeproj">
+            BuildableName = "Bug Fighter.app"
+            BlueprintName = "Bug Fighter"
+            ReferencedContainer = "container:Bug Fighter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Ladybug Fighter.app"
-            BlueprintName = "Ladybug Fighter"
-            ReferencedContainer = "container:Ladybug Fighter.xcodeproj">
+            BuildableName = "Bug Fighter.app"
+            BlueprintName = "Bug Fighter"
+            ReferencedContainer = "container:Bug Fighter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "357164DE19DB1E4800ED38A9"
-            BuildableName = "Ladybug Fighter.app"
-            BlueprintName = "Ladybug Fighter"
-            ReferencedContainer = "container:Ladybug Fighter.xcodeproj">
+            BuildableName = "Bug Fighter.app"
+            BlueprintName = "Bug Fighter"
+            ReferencedContainer = "container:Bug Fighter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
