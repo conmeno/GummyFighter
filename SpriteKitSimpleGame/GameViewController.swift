@@ -69,7 +69,10 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         let scene = GameScene(size: view.bounds.size)
         
         let skView = view as! SKView
+        //let myAd = MyAd(root: self)
         
+       // myAd.hideAdmobBanner()
+       
 //        skView.showsFPS = true
 //        skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
@@ -112,7 +115,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
   }
     
 
-    
+   
 
 
 }
