@@ -17,11 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
    // var UIiAd: ADBannerView = ADBannerView()
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
-    let data = Data()
-    Chartboost.startWithAppId(data.cAppID, appSignature: data.cSign, delegate: self)
- 
-    AmazonAdRegistration.sharedRegistration().setAppKey(data.AmazonKey)
-    AmazonAdRegistration.sharedRegistration().setLogging(true)
+
+    Utility.SetUpAdData()
+    
+    if(Utility.isAd2)
+    {
+        Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
+    }
+    
+    if(Utility.isAd6)
+    {
+        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+        AmazonAdRegistration.sharedRegistration().setLogging(true)
+    }
+    
+    if(Utility.isAd8)
+    {
+        
+        //vungle
+        //let sdk = VungleSDK.sharedSDK()
+        //sdk.startWithAppId(Utility.VungleID)
+    }
+    
+    
+    
+    //applovin
+    if(Utility.isAd9)
+    {
+        ALSdk.initializeSdk()
+    }
+    
+    if(Utility.isAd5)
+    {
+        AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+    }
+    
+    
     return true
   }
 

@@ -36,7 +36,7 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         let WebDetailView = storyboard.instantiateViewControllerWithIdentifier("AdView1") as UIViewController
         
         self.presentViewController(WebDetailView, animated: true, completion: nil)
-       
+        Utility.OpenView("AdView1",view: self)
 
     }
    
