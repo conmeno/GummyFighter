@@ -108,14 +108,84 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     
     
-    let myAd = MyAd(root: self)
+    if(Utility.showOtherAd)
+    {
+        let myad = MyAd(root: self)
+        myad.ViewDidload()
+        
+    }
     
-    myAd.ViewDidload()
+    
+    if(Utility.isAd2)
+    {
+        setupDidload()
+    }
     
   }
     
 
    
+    ///=======================================================================================================
+    //BEGIN FOR AD
+    ///=======================================================================================================
+    var timerVPN:NSTimer?
+    var gBannerView: GADBannerView!
+    func setupDidload()
+    {
+        
+        
+        ShowAdmobBanner()
+        self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(20, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+        
+        
+    }
+    func ShowAdmobBanner()
+    {
+        
+        //let viewController = appDelegate1.window!.rootViewController as! GameViewController
+        let w = self.view.bounds.width
+        let h = self.view.bounds.height
+        //        if(!AdmobBannerTop)
+        //        {
+        //            AdmobLocationY = h - 50
+        //        }
+        gBannerView = GADBannerView(frame: CGRectMake(0, h - 50 , w, 50))
+        gBannerView?.adUnitID = Utility.GBannerAdUnit
+        print(Utility.GBannerAdUnit)
+        gBannerView?.delegate = self
+        gBannerView?.rootViewController = self
+        gBannerView?.viewWithTag(999)
+        self.view?.addSubview(gBannerView)
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID , Utility.AdmobTestDeviceID];
+        gBannerView?.loadRequest(request)
+        //gBannerView?.hidden = true
+        
+    }
+    func timerVPNMethodAutoAd(timer:NSTimer) {
+        print("VPN Checking....")
+        let isAd = Utility.CanShowAd()
+        if(isAd && Utility.isStopAdmobAD)
+        {
+            
+            ShowAdmobBanner()
+            Utility.isStopAdmobAD = false
+            print("Reopening Ad from admob......")
+        }
+        if(isAd == false && Utility.isStopAdmobAD == false)
+        {
+            gBannerView.removeFromSuperview()
+            Utility.isStopAdmobAD = true;
+            print("Stop showing Ad from admob......")
+        }
+        
+        
+    }
+    
+    ///=======================================================================================================
+    //BEGIN FOR AD
+    ///=======================================================================================================
 
 
 }
