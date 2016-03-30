@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
 
-    
     Utility.SetUpAdData()
     
     
@@ -32,6 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if(Utility.isAd4)
     {
         AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+    }
+    
+    if(Utility.isAd5)
+    {
+        
+        let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        sdk.appID = Utility.StartAppAppID
+        sdk.devID = Utility.StartAppAccountID
+        //            sdk.showSplashAd()
+        //            sdk.
     }
 
     

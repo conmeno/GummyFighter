@@ -58,6 +58,8 @@
 		9670A9071C646C4D00EEF360 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */; };
 		96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */; };
 		96DD2D141C61F7CF0053EDF7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */; };
+		96E1FCC91CABB60700A98394 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E1FCC71CABB60700A98394 /* StartApp.bundle */; };
+		96E1FCCA1CABB60700A98394 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCC81CABB60700A98394 /* StartApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		96E1FCC71CABB60700A98394 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		96E1FCC81CABB60700A98394 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				1B4BE58C1C9E8B4A00106EBE /* libz.1.2.5.tbd in Frameworks */,
 				1B4BE58A1C9E749300106EBE /* WebKit.framework in Frameworks */,
 				96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */,
+				96E1FCCA1CABB60700A98394 /* StartApp.framework in Frameworks */,
 				96DD2D141C61F7CF0053EDF7 /* libsqlite3.tbd in Frameworks */,
 				9670A9071C646C4D00EEF360 /* GoogleMobileAds.framework in Frameworks */,
 				8433660B1B660FD100058193 /* AdSupport.framework in Frameworks */,
@@ -196,6 +201,8 @@
 		357164D619DB1E4800ED38A9 = {
 			isa = PBXGroup;
 			children = (
+				96E1FCC71CABB60700A98394 /* StartApp.bundle */,
+				96E1FCC81CABB60700A98394 /* StartApp.framework */,
 				1B4BE58B1C9E8B4A00106EBE /* libz.1.2.5.tbd */,
 				1B4BE5891C9E749300106EBE /* WebKit.framework */,
 				1B4BE5701C9E73AB00106EBE /* AdColony.framework */,
@@ -380,6 +387,7 @@
 			files = (
 				1B4BE5871C9E740500106EBE /* StoryboardAD.storyboard in Resources */,
 				84A1AD751B560B2400884A7D /* b1.png in Resources */,
+				96E1FCC91CABB60700A98394 /* StartApp.bundle in Resources */,
 				1B60C4F41C70743E005BBE59 /* firstBg.png in Resources */,
 				3571650E19DB1F5500ED38A9 /* sprites.atlas in Resources */,
 				843088841B54DE2E00417097 /* play256.png in Resources */,
