@@ -85,7 +85,7 @@
 		1B4BE58B1C9E8B4A00106EBE /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		1B60C4F11C7067CE005BBE59 /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
 		1B60C4F31C70743E005BBE59 /* firstBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstBg.png; sourceTree = "<group>"; };
-		357164DF19DB1E4800ED38A9 /* Ladybug Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ladybug Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		357164DF19DB1E4800ED38A9 /* Bug Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bug Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		357164E319DB1E4800ED38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357164E419DB1E4800ED38A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		357164E619DB1E4800ED38A9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		357164ED19DB1E4800ED38A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		357164EF19DB1E4800ED38A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		357164F219DB1E4800ED38A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		357164F819DB1E4800ED38A9 /* Ladybug Fighter.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ladybug Fighter.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		357164F819DB1E4800ED38A9 /* Bug Fighter.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bug Fighter.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		357164FD19DB1E4800ED38A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357164FE19DB1E4800ED38A9 /* SpriteKitSimpleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitSimpleGameTests.swift; sourceTree = "<group>"; };
 		3571650B19DB1F5500ED38A9 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 		357164E019DB1E4800ED38A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				357164DF19DB1E4800ED38A9 /* Ladybug Fighter.app */,
-				357164F819DB1E4800ED38A9 /* Ladybug Fighter.xctest */,
+				357164DF19DB1E4800ED38A9 /* Bug Fighter.app */,
+				357164F819DB1E4800ED38A9 /* Bug Fighter.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,9 +299,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		357164DE19DB1E4800ED38A9 /* Ladybug Fighter */ = {
+		357164DE19DB1E4800ED38A9 /* Bug Fighter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Ladybug Fighter" */;
+			buildConfigurationList = 3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Bug Fighter" */;
 			buildPhases = (
 				357164DB19DB1E4800ED38A9 /* Sources */,
 				357164DC19DB1E4800ED38A9 /* Frameworks */,
@@ -311,14 +311,14 @@
 			);
 			dependencies = (
 			);
-			name = "Ladybug Fighter";
+			name = "Bug Fighter";
 			productName = SpriteKitSimpleGame;
-			productReference = 357164DF19DB1E4800ED38A9 /* Ladybug Fighter.app */;
+			productReference = 357164DF19DB1E4800ED38A9 /* Bug Fighter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		357164F719DB1E4800ED38A9 /* Ladybug FighterTests */ = {
+		357164F719DB1E4800ED38A9 /* Bug FighterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Ladybug FighterTests" */;
+			buildConfigurationList = 3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Bug FighterTests" */;
 			buildPhases = (
 				357164F419DB1E4800ED38A9 /* Sources */,
 				357164F519DB1E4800ED38A9 /* Frameworks */,
@@ -329,9 +329,9 @@
 			dependencies = (
 				357164FA19DB1E4800ED38A9 /* PBXTargetDependency */,
 			);
-			name = "Ladybug FighterTests";
+			name = "Bug FighterTests";
 			productName = SpriteKitSimpleGameTests;
-			productReference = 357164F819DB1E4800ED38A9 /* Ladybug Fighter.xctest */;
+			productReference = 357164F819DB1E4800ED38A9 /* Bug Fighter.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +346,7 @@
 				TargetAttributes = {
 					357164DE19DB1E4800ED38A9 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = 597LVZ4LQD;
+						DevelopmentTeam = S5AVB3Q4DW;
 					};
 					357164F719DB1E4800ED38A9 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -354,7 +354,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Ladybug Fighter" */;
+			buildConfigurationList = 357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Bug Fighter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -367,8 +367,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				357164DE19DB1E4800ED38A9 /* Ladybug Fighter */,
-				357164F719DB1E4800ED38A9 /* Ladybug FighterTests */,
+				357164DE19DB1E4800ED38A9 /* Bug Fighter */,
+				357164F719DB1E4800ED38A9 /* Bug FighterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -432,7 +432,7 @@
 /* Begin PBXTargetDependency section */
 		357164FA19DB1E4800ED38A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 357164DE19DB1E4800ED38A9 /* Ladybug Fighter */;
+			target = 357164DE19DB1E4800ED38A9 /* Bug Fighter */;
 			targetProxy = 357164F919DB1E4800ED38A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -559,8 +559,8 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "phuongnt1999.Ladybug-Fighter";
-				PRODUCT_NAME = "Ladybug Fighter";
+				PRODUCT_BUNDLE_IDENTIFIER = "newphuongnt3003.Bug-Fighter";
+				PRODUCT_NAME = "Bug Fighter";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SpriteKitSimpleGame/AdManager/Bridging-header.h";
 			};
@@ -590,8 +590,8 @@
 					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "phuongnt1999.Ladybug-Fighter";
-				PRODUCT_NAME = "Ladybug Fighter";
+				PRODUCT_BUNDLE_IDENTIFIER = "newphuongnt3003.Bug-Fighter";
+				PRODUCT_NAME = "Bug Fighter";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SpriteKitSimpleGame/AdManager/Bridging-header.h";
 			};
@@ -612,8 +612,8 @@
 				INFOPLIST_FILE = SpriteKitSimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "Ladybug Fighter";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ladybug Fighter.app/Ladybug Fighter";
+				PRODUCT_NAME = "Bug Fighter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bug Fighter.app/Bug Fighter";
 			};
 			name = Debug;
 		};
@@ -628,15 +628,15 @@
 				INFOPLIST_FILE = SpriteKitSimpleGameTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "Ladybug Fighter";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ladybug Fighter.app/Ladybug Fighter";
+				PRODUCT_NAME = "Bug Fighter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bug Fighter.app/Bug Fighter";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Ladybug Fighter" */ = {
+		357164DA19DB1E4800ED38A9 /* Build configuration list for PBXProject "Bug Fighter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650019DB1E4800ED38A9 /* Debug */,
@@ -645,7 +645,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Ladybug Fighter" */ = {
+		3571650219DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Bug Fighter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650319DB1E4800ED38A9 /* Debug */,
@@ -654,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Ladybug FighterTests" */ = {
+		3571650519DB1E4800ED38A9 /* Build configuration list for PBXNativeTarget "Bug FighterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3571650619DB1E4800ED38A9 /* Debug */,
