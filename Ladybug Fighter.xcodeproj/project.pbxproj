@@ -12,9 +12,7 @@
 		1B4BE5831C9E740500106EBE /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BE57A1C9E740500106EBE /* ADXML.swift */; };
 		1B4BE5841C9E740500106EBE /* cclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BE57D1C9E740500106EBE /* cclass.m */; };
 		1B4BE5851C9E740500106EBE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BE57E1C9E740500106EBE /* Data.swift */; };
-		1B4BE5861C9E740500106EBE /* MyAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BE57F1C9E740500106EBE /* MyAd.swift */; };
 		1B4BE5871C9E740500106EBE /* StoryboardAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4BE5801C9E740500106EBE /* StoryboardAD.storyboard */; };
-		1B4BE5881C9E740500106EBE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4BE5811C9E740500106EBE /* Utility.swift */; };
 		1B4BE58A1C9E749300106EBE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4BE5891C9E749300106EBE /* WebKit.framework */; };
 		1B4BE58C1C9E8B4A00106EBE /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B4BE58B1C9E8B4A00106EBE /* libz.1.2.5.tbd */; };
 		1B60C4F21C7067CE005BBE59 /* AmazonAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B60C4F11C7067CE005BBE59 /* AmazonAd.framework */; };
@@ -78,9 +76,7 @@
 		1B4BE57C1C9E740500106EBE /* cclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cclass.h; path = AdManager/cclass.h; sourceTree = "<group>"; };
 		1B4BE57D1C9E740500106EBE /* cclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cclass.m; path = AdManager/cclass.m; sourceTree = "<group>"; };
 		1B4BE57E1C9E740500106EBE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = AdManager/Data.swift; sourceTree = "<group>"; };
-		1B4BE57F1C9E740500106EBE /* MyAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAd.swift; path = AdManager/MyAd.swift; sourceTree = "<group>"; };
 		1B4BE5801C9E740500106EBE /* StoryboardAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StoryboardAD.storyboard; path = AdManager/StoryboardAD.storyboard; sourceTree = "<group>"; };
-		1B4BE5811C9E740500106EBE /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = AdManager/Utility.swift; sourceTree = "<group>"; };
 		1B4BE5891C9E749300106EBE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1B4BE58B1C9E8B4A00106EBE /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		1B60C4F11C7067CE005BBE59 /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
@@ -186,9 +182,7 @@
 				1B4BE57C1C9E740500106EBE /* cclass.h */,
 				1B4BE57D1C9E740500106EBE /* cclass.m */,
 				1B4BE57E1C9E740500106EBE /* Data.swift */,
-				1B4BE57F1C9E740500106EBE /* MyAd.swift */,
 				1B4BE5801C9E740500106EBE /* StoryboardAD.storyboard */,
-				1B4BE5811C9E740500106EBE /* Utility.swift */,
 			);
 			name = Ad;
 			sourceTree = "<group>";
@@ -406,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B4BE5881C9E740500106EBE /* Utility.swift in Sources */,
 				1B4BE5821C9E740500106EBE /* AdManagerView.swift in Sources */,
 				357164E919DB1E4800ED38A9 /* GameScene.swift in Sources */,
 				1B4BE5831C9E740500106EBE /* ADXML.swift in Sources */,
@@ -415,7 +408,6 @@
 				3571651019DB322700ED38A9 /* GameOverScene.swift in Sources */,
 				357164E519DB1E4800ED38A9 /* AppDelegate.swift in Sources */,
 				1B4BE5851C9E740500106EBE /* Data.swift in Sources */,
-				1B4BE5861C9E740500106EBE /* MyAd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
