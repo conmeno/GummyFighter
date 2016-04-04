@@ -10,15 +10,38 @@ import UIKit
 import iAd
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,ChartboostDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
    // var UIiAd: ADBannerView = ADBannerView()
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
-    let data = Data()
-    Chartboost.startWithAppId(data.cAppID, appSignature: data.cSign, delegate: self)
+    Utility.SetUpAdData()
+    
+    
+    //if(Utility.isAd3)
+    //{
+    AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+    AmazonAdRegistration.sharedRegistration().setLogging(true)
+    //}
+    
+    
+    if(Utility.isAd4)
+    {
+        AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+    }
+    
+    if(Utility.isAd5)
+    {
+        
+        let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        sdk.appID = Utility.StartAppAppID
+        sdk.devID = Utility.StartAppAccountID
+        //            sdk.showSplashAd()
+        //            sdk.
+    }
+
  
  
     return true

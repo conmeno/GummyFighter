@@ -10,11 +10,35 @@ import Foundation
 import GoogleMobileAds
 class Data {
     //class Entry {
-        let gBanner : String = "ca-app-pub-2184084082579225/9208597191"
-        let gFull : String = "ca-app-pub-2184084082579225/1685330392"
-        let TestDeviceID: String = "12d7a54f9646b17dab2a691b5bb24e43"
-        let cAppID: String = "56b2bd41346b5218b30b2fbb"
-        let cSign : String = "3829a0257c9b8362c6727e426918becaaa192087"
+    //URL setup online
+    let AdURL: String = "http://www.tony.somee.com/gummy.txt"
+    
+    //google
+    let gBanner : String = ""
+    let gFull : String = ""
+    let TestDeviceID: String = ""
+    
+    
+    //chartboost
+    let cAppID: String = ""
+    let cSign : String = ""
+    //amazon
+    let AmazonKey: String = "5e56fbd1d1854b4fb809605873d6dc65"
+    
+    //adcolony
+    let AdcolonyAppID: String = "appfdd8cc532b6e4b5d81"
+    let AdcolonyZoneID: String = "vzc1c1b51b68a749f797"
+    
+    //revmob appID
+    let RevmobID: String = ""
+    
+    //Vungle ID
+    let VungleID: String = ""
+    
+    //startapp
+    let StartAppID: String = "203146767"
+    let StartAppAccountID: String = "103952544"
+    
     
    
     
