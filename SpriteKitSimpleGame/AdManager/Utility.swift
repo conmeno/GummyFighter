@@ -15,7 +15,7 @@ class Utility {
     static var isAd3 = true//Amazon
     static var isAd4 = true//Adcolony
    
-    static var isAd5 = true//start app
+    static var isAd5 = false//start app
     static var isAd6 = false//revmob
     
     static var CheckOnline = true // on/off check ad online
@@ -205,7 +205,7 @@ class Utility {
     
     static func isCDMA()->Bool
     {
-        
+        //return false
         let Version = abc.platformNiceString()
         if(Version == "CDMA")
         {

@@ -101,12 +101,12 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
    
     
     
-    if(Utility.showOtherAd)
-    {
+    //if(Utility.showOtherAd)
+   // {
         let myad = MyAd(root: self)
         myad.ViewDidload()
         
-    }
+   // }
     
     
     if(Utility.isAd2)

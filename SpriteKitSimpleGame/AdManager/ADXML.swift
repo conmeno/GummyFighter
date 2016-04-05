@@ -159,8 +159,25 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"amazon")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-        
-        
+            ///startapp
+        else if(currentNode == "startappID")
+        {
+            print("startappID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startappID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "startAccID")
+        {
+            print("startAccID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startAccID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
         
         

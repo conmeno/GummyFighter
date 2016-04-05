@@ -57,6 +57,7 @@
 		969288B81CB267D500CA073A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969288B71CB267D500CA073A /* WebKit.framework */; };
 		969288BA1CB267FE00CA073A /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 969288B91CB267FE00CA073A /* libz.1.2.5.tbd */; };
 		969288BC1CB2686B00CA073A /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969288BB1CB2686B00CA073A /* ADXML.swift */; };
+		969288BE1CB36D3A00CA073A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 969288BD1CB36D3A00CA073A /* libz.tbd */; };
 		96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */; };
 		96DD2D141C61F7CF0053EDF7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		969288B71CB267D500CA073A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/PrivateFrameworks/WebKit.framework; sourceTree = SDKROOT; };
 		969288B91CB267FE00CA073A /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		969288BB1CB2686B00CA073A /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
+		969288BD1CB36D3A00CA073A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		96DD2D111C61F7CE0053EDF7 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		96DD2D121C61F7CE0053EDF7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969288BE1CB36D3A00CA073A /* libz.tbd in Frameworks */,
 				96DD2D131C61F7CF0053EDF7 /* libsqlite3.0.tbd in Frameworks */,
 				969288BA1CB267FE00CA073A /* libz.1.2.5.tbd in Frameworks */,
 				84AB9DF01B80782F00F3D96B /* Social.framework in Frameworks */,
@@ -183,6 +186,7 @@
 		357164D619DB1E4800ED38A9 = {
 			isa = PBXGroup;
 			children = (
+				969288BD1CB36D3A00CA073A /* libz.tbd */,
 				969288B91CB267FE00CA073A /* libz.1.2.5.tbd */,
 				969288B71CB267D500CA073A /* WebKit.framework */,
 				969288AF1CB267C500CA073A /* AdColony.framework */,
