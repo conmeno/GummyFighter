@@ -43,6 +43,7 @@
 		84AB9DFA1B8089EC00F3D96B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AB9DF91B8089EC00F3D96B /* UIKit.framework */; };
 		84E24DDB1B54D4F10006C070 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDA1B54D4F10006C070 /* 1.mp3 */; };
 		84E24DDD1B54D50B0006C070 /* buzz2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDC1B54D50B0006C070 /* buzz2.mp3 */; };
+		965E813E1CB608A100126BCB /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E813D1CB608A100126BCB /* RevMobAds.framework */; };
 		9670A9071C646C4D00EEF360 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */; };
 		9670A90F1C646FE600EEF360 /* AdManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9670A9091C646FE600EEF360 /* AdManagerView.swift */; };
 		9670A9101C646FE600EEF360 /* cclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9670A90C1C646FE600EEF360 /* cclass.m */; };
@@ -113,6 +114,7 @@
 		84AB9DF91B8089EC00F3D96B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84E24DDA1B54D4F10006C070 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		84E24DDC1B54D50B0006C070 /* buzz2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzz2.mp3; sourceTree = "<group>"; };
+		965E813D1CB608A100126BCB /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		9670A9091C646FE600EEF360 /* AdManagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdManagerView.swift; path = AdManager/AdManagerView.swift; sourceTree = "<group>"; };
 		9670A90A1C646FE600EEF360 /* Bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-header.h"; path = "AdManager/Bridging-header.h"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				84AB9DF21B80783E00F3D96B /* WebKit.framework in Frameworks */,
 				969288B61CB267C500CA073A /* StartApp.framework in Frameworks */,
 				843365F91B660F9D00058193 /* StoreKit.framework in Frameworks */,
+				965E813E1CB608A100126BCB /* RevMobAds.framework in Frameworks */,
 				969288B41CB267C500CA073A /* AmazonAd.framework in Frameworks */,
 				84AB9DEC1B80780600F3D96B /* CoreAudio.framework in Frameworks */,
 				84AB9DED1B80780600F3D96B /* CoreData.framework in Frameworks */,
@@ -186,6 +189,7 @@
 		357164D619DB1E4800ED38A9 = {
 			isa = PBXGroup;
 			children = (
+				965E813D1CB608A100126BCB /* RevMobAds.framework */,
 				969288BD1CB36D3A00CA073A /* libz.tbd */,
 				969288B91CB267FE00CA073A /* libz.1.2.5.tbd */,
 				969288B71CB267D500CA073A /* WebKit.framework */,
