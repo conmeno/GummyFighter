@@ -100,34 +100,19 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     self.view.window?.rootViewController = self
     
-   // let rootVC = self.view.window?.rootViewController
-     
-         
-    //CheckAdOptionValue()
    
-    
-    
-    
-    if(Utility.showOtherAd)
-    {
-        let myad = MyAd(root: self)
-        myad.ViewDidload()
-        
-    }
-    
-    
-    if(Utility.isAd2)
-    {
-        setupDidload()
-    }
     
   }
     
-
-   
-    ///=======================================================================================================
-    //BEGIN FOR AD
-    ///=======================================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    //Begin FOR GOOGLE AD BANNER
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
     var timerVPN:NSTimer?
     var gBannerView: GADBannerView!
     func setupDidload()
@@ -144,12 +129,12 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         
         //let viewController = appDelegate1.window!.rootViewController as! GameViewController
         let w = self.view.bounds.width
-        let h = self.view.bounds.height
+        //let h = self.view.bounds.height
         //        if(!AdmobBannerTop)
         //        {
         //            AdmobLocationY = h - 50
         //        }
-        gBannerView = GADBannerView(frame: CGRectMake(0, h - 50 , w, 50))
+        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w, 50))
         gBannerView?.adUnitID = Utility.GBannerAdUnit
         print(Utility.GBannerAdUnit)
         gBannerView?.delegate = self
@@ -163,9 +148,28 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         //gBannerView?.hidden = true
         
     }
+    func CanShowAd()->Bool
+    {
+        if(!Utility.CheckVPN)
+        {
+            return true
+        }else
+        {
+            let abc = cclass()
+            let VPN = abc.isVPNConnected()
+            let Version = abc.platformNiceString()
+            if(VPN == false && Version == "CDMA")
+            {
+                return false
+            }
+        }
+        
+        return true
+        
+    }
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
-        let isAd = Utility.CanShowAd()
+        let isAd = CanShowAd()
         if(isAd && Utility.isStopAdmobAD)
         {
             
@@ -182,10 +186,19 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         
         
     }
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    //ENDING FOR GOOGLE AD
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
     
-    ///=======================================================================================================
-    //BEGIN FOR AD
-    ///=======================================================================================================
+
+   
+ 
 
 
 }

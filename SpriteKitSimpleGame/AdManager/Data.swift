@@ -10,7 +10,7 @@ import Foundation
 
 class Data {
     
-    //Snake 1998 game
+    //5120 game
     
     //URL setup online
     let AdURL: String = "http://www.tony.somee.com/bug-fighter-v2.txt"
@@ -18,32 +18,32 @@ class Data {
     //google
     let gBanner : String = ""
     let gFull : String = ""
-    let TestDeviceID: String = "25229a4d09c90bcec58dec27036a470b"
+    let TestDeviceID: String = ""
     
-    
+
     //chartboost
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = ""
+    let AmazonKey: String = "a3d539cd6201454d86fa3645bd7fe567"
     
     //adcolony
     let AdcolonyAppID: String = ""
     let AdcolonyZoneID: String = ""
     
     //revmob appID
-    let RevmobID: String = ""
+    let RevmobID: String = "571cd2cacae2c3201d299671"
     
     //Vungle ID
-    let VungleID: String = ""
+    let VungleID: String = "1069679085"
     
-    //startapp
-    let StartAppID: String = "202174021"
-    let StartAppAccountID: String = " 102803784"
+    let UnityGameId: String = "1062777"
+    
+    let SonicID: String = "47fc6d95"
     
     
     
-       
+    
     
     
 
