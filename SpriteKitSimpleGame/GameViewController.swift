@@ -100,7 +100,16 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
     
     self.view.window?.rootViewController = self
     
-   
+    let myad = MyAd(root: self)
+    myad.ViewDidload()
+    
+    
+    
+    
+    if(Utility.isAd2)
+    {
+        setupDidload()
+    }
     
   }
     
@@ -129,12 +138,12 @@ class GameViewController: UIViewController, GADBannerViewDelegate {
         
         //let viewController = appDelegate1.window!.rootViewController as! GameViewController
         let w = self.view.bounds.width
-        //let h = self.view.bounds.height
+        let h = self.view.bounds.height
         //        if(!AdmobBannerTop)
         //        {
         //            AdmobLocationY = h - 50
         //        }
-        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w, 50))
+        gBannerView = GADBannerView(frame: CGRectMake(0, h - 50 , w, 50))
         gBannerView?.adUnitID = Utility.GBannerAdUnit
         print(Utility.GBannerAdUnit)
         gBannerView?.delegate = self

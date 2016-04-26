@@ -28,11 +28,11 @@ class Data {
     let AmazonKey: String = "a3d539cd6201454d86fa3645bd7fe567"
     
     //adcolony
-    let AdcolonyAppID: String = ""
-    let AdcolonyZoneID: String = ""
+    let AdcolonyAppID: String = "appc70edc8bd6574f2e81"
+    let AdcolonyZoneID: String = "vzd4fb70062a104f199e"
     
     //revmob appID
-    let RevmobID: String = "571cd2cacae2c3201d299671"
+    let RevmobID: String = "571de047880fbf6a0b47c664"
     
     //Vungle ID
     let VungleID: String = "1069679085"
