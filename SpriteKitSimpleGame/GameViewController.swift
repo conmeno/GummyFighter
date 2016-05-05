@@ -349,13 +349,13 @@ class GameViewController: UIViewController, GADBannerViewDelegate, GADInterstiti
         
         //GEt Ad unit online
         
-        if(CheckOnline)
-        {
-            
-            let xmlSetup = ADXML()
-            xmlSetup.LoadXML()
-        }
-        SetupAdOnline()
+//        if(CheckOnline)
+//        {
+//            
+//            let xmlSetup = ADXML()
+//            xmlSetup.LoadXML()
+//        }
+//        SetupAdOnline()
         
         
     }
