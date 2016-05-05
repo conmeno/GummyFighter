@@ -30,7 +30,7 @@ class Data {
     let AdcolonyZoneID: String = "vzc1c1b51b68a749f797"
     
     //revmob appID
-    let RevmobID: String = ""
+    let RevmobID: String = "5705d927da56c15627a0edbd"
     
     //Vungle ID
     let VungleID: String = ""

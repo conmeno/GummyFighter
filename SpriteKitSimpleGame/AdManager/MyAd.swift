@@ -66,7 +66,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             amazonLocationY = (viewController.view?.bounds.height)! - 50
         }
         
-        if(Utility.CanShowAd())
+        if(CanShowAd())
         {
             if(Utility.showOtherAd)
             {
@@ -74,6 +74,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 {
                     self.interstitial = self.createAndLoadAd()
                     showAdmob()
+                    
+                     self.timerAd10 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerAd10Method:", userInfo: nil, repeats: true)
                 }
                 
                 
@@ -95,6 +97,11 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                     
                     //startAppAd!.showAd()
                 }
+                if(Utility.isAd6)
+                {
+                
+                    Utility.setupRevmob()
+                }
               
               
                 
@@ -105,7 +112,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             if(Utility.isAd3)
             {
                 
-                //amazonLocationY = (viewController.view?.bounds.height)! - 50
+                amazonLocationY = (viewController.view?.bounds.height)! - 50
                 //set up amazon full
                 interstitialAmazon = AmazonAdInterstitial()
                 interstitialAmazon.delegate = self
@@ -293,11 +300,18 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
 //        
 //    }
     
- 
+ func timerAd10Method(timer:NSTimer) {
+    
+    if(self.interstitial!.isReady)
+    {
+        showAdmob()
+        timerAd10?.invalidate()
+    }
+    }
     //timerADcolony
     func timerAd30(timer:NSTimer) {
         
-        if(Utility.CanShowAd())
+        if(CanShowAd())
         {
             if(Utility.showOtherAd)
             {
@@ -523,9 +537,22 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         //loadAmazonFull();
     }
     
-
     
     ////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////
+    func CanShowAd()->Bool
+    {
+        let abc = cclass()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        
+        return true
+    }
+
     
 }
