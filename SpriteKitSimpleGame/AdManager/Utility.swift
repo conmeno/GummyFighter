@@ -13,10 +13,14 @@ class Utility {
     static var isAd1 = false//admob full
     static var isAd2 = false//Admob Banner
     static var isAd3 = true//Amazon
-    static var isAd4 = true//Adcolony
+    static var isAd4 = false//Adcolony
    
-    static var isAd5 = false//start app
-    static var isAd6 = false//revmob
+    static var isAd5 = false// ==>UnityAds
+    static var isAd6 = true//revmob
+    
+    static var isAd7 = false //vungle
+    static var isAd8 = false //Sonic
+    
     
     static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""
@@ -29,10 +33,14 @@ class Utility {
     static var Amazonkey = ""
     static var StartAppAppID = ""
     static var StartAppAccountID=""
-    
+    static var VungleID = ""
+    static var UnityGameID = ""
+    static var SonicID = ""
     static var isStopAdmobAD = false
     
-    static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    static var CheckVPN = true
+    
+    //static var showOtherAd = false //showAd (ngoai tru Admob Banner)
     
     static var abc = cclass()
     static var data = Data()
@@ -59,12 +67,10 @@ class Utility {
         AdcolonyZoneID = data.AdcolonyZoneID
         AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
-        
-        StartAppAppID = data.StartAppID
-        StartAppAccountID = data.StartAppAccountID
-        //get edit ad unit ID for Admob
-        
-      
+        VungleID = data.VungleID
+        UnityGameID = data.UnityGameId
+        SonicID = data.SonicID
+ 
         
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
@@ -83,59 +89,133 @@ class Utility {
             xmlSetup.LoadXML()
         }
         
-        //ad1 admob full
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
+        if(isCDMA())
         {
-            isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("ad1") as! Bool
+            //ad1 admob full
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
+            {
+                isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("ad1") as! Bool
+                
+            }
             
+            //ad2 banner
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad2") != nil)
+            {
+                isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("ad2") as! Bool
+                
+            }
+            
+            
+            //ad3 ...
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad3") != nil)
+            {
+                isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("ad3") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad4") != nil)
+            {
+                isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("ad4") as! Bool
+                
+            }
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
+            {
+                isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
+                
+            }
+            
+            
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
+            {
+                isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad7") != nil)
+            {
+                isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("ad7") as! Bool
+                
+            }
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad8") != nil)
+            {
+                isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
+                
+            }
+        
+        }else
+        {
+        
+            //ad1 admob full
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad1") != nil)
+            {
+                isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad1") as! Bool
+                
+            }
+            
+            //ad2 banner
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad2") != nil)
+            {
+                isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad2") as! Bool
+                
+            }
+            
+            
+            //ad3 ...
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad3") != nil)
+            {
+                isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad3") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad4") != nil)
+            {
+                isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad4") as! Bool
+                
+            }
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad5") != nil)
+            {
+                isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad5") as! Bool
+                
+            }
+            
+            
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad6") != nil)
+            {
+                isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad6") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad7") != nil)
+            {
+                isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad7") as! Bool
+                
+            }
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad8") != nil)
+            {
+                isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad8") as! Bool
+                
+            }
         }
         
-        //ad2 banner
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad2") != nil)
+
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("check-VPN") != nil)
         {
-            isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("ad2") as! Bool
-            
-        }
-        
-        
-        //ad3 ...
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad3") != nil)
-        {
-            isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("ad3") as! Bool
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad4") != nil)
-        {
-            isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("ad4") as! Bool
-            
-        }
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
-        {
-            isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
-            
-        }
-        
-        
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
-        {
-            isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
-            
-        }
-        
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") != nil)
-        {
-            showOtherAd = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") as! Bool
-            
-            print( NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad"))
+            CheckVPN = NSUserDefaults.standardUserDefaults().objectForKey("check-VPN") as! Bool
             
         }
         
@@ -146,10 +226,10 @@ class Utility {
         
         SetupAdOnline()
         
-        if(Utility.isCDMA())
-        {
-            showOtherAd = true
-        }
+//        if(Utility.isCDMA())
+//        {
+//            showOtherAd = true
+//        }
         
         
     }
@@ -192,7 +272,28 @@ class Utility {
             
         }
         
+        //vungle id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
+        {
+            VungleID = NSUserDefaults.standardUserDefaults().objectForKey("vungleid") as! String
+            
+        }
         
+        
+        //unity id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("unityid") != nil)
+        {
+            UnityGameID = NSUserDefaults.standardUserDefaults().objectForKey("unityid") as! String
+            
+        }
+        
+        
+        //sonic id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("sonicid") != nil)
+        {
+            SonicID = NSUserDefaults.standardUserDefaults().objectForKey("sonicid") as! String
+            
+        }
         //revmob id
         if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
         {
@@ -200,19 +301,19 @@ class Utility {
             
         }
         
-        //get CDMA status
-        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
-        {
-            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
-            if(tempCDMA == "true")
-            {
-                showOtherAd = true
-            }else
-            {
-                showOtherAd = false
-            }
-            
-        }
+//        //get CDMA status
+//        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
+//        {
+//            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
+//            if(tempCDMA == "true")
+//            {
+//                showOtherAd = true
+//            }else
+//            {
+//                showOtherAd = false
+//            }
+//            
+//        }
         
         
     }
@@ -236,10 +337,11 @@ class Utility {
         
         let completionBlock: () -> Void = {
             RevMobAds.session().showFullscreen()
+        
             
             self.RevmobFull()
             self.RevmobVideo()
-            RevmobPopup()
+            //RevmobPopup()
             self.RevmobBanner()
         }
         let errorBlock: (NSError!) -> Void = {error in

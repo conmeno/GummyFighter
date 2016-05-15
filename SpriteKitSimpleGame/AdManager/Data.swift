@@ -11,7 +11,7 @@ import GoogleMobileAds
 class Data {
     //class Entry {
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/gummy.txt"
+    let AdURL: String = "http://webappchannel.com/tonyapp/gummy-v4.txt"
     
     //google
     let gBanner : String = ""
@@ -39,6 +39,11 @@ class Data {
     let StartAppID: String = "203032077"
     let StartAppAccountID: String = "103952544"
     
+ 
+    
+    let UnityGameId: String = ""
+    
+    let SonicID: String = ""
     
    
     

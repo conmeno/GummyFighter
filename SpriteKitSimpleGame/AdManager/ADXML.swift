@@ -21,12 +21,23 @@ class ADXML: NSObject, NSXMLParserDelegate
     {
         if let url = NSURL(string: data.AdURL)
         {
-            if let data = NSData(contentsOfURL: url)
-            {
-                let parser = NSXMLParser(data: data)
+            var data: NSData? = nil
+            data = NSData(contentsOfURL: url)
+            if data != nil {
+                let parser = NSXMLParser(data: data!)
                 parser.delegate = self
                 parser.parse()
             }
+            
+            
+            
+//            if let data = NSData(contentsOfURL: url)
+//            {
+//                let parser = NSXMLParser(data: data)
+//                parser.delegate = self
+//                parser.parse()
+//                
+//            }
         }
         
     }
@@ -53,54 +64,109 @@ class ADXML: NSObject, NSXMLParserDelegate
            boolSTR = true
         }
         
-        //Show Ad  status
-        if(currentNode == "showOtherAd")
+ 
+        if(currentNode == "checkVPN")
         {
-            print("showOtherAd status " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"show-other-ad-online")
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"check-VPN")
             NSUserDefaults.standardUserDefaults().synchronize()
-            
             NSUserDefaults.standardUserDefaults().setObject(false, forKey:"adOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
+
+
+        }
+        else if(currentNode == "online-ad1")
+        {
+            
+                NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad1")
+                NSUserDefaults.standardUserDefaults().synchronize()
+          
+        }
+        else if(currentNode == "online-ad2")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad2")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
 
+        else if(currentNode == "online-ad3")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad3")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad4")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad4")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad5")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad5")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad6")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad6")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad7")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad7")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad8")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad8")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+            
+            
+            ///Ad for CDMA
         else if(currentNode == "ad1")
         {
             
-                NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad1")
-                NSUserDefaults.standardUserDefaults().synchronize()
-          
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad1")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
         }
         else if(currentNode == "ad2")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad2")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad3")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad3")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad4")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad4")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad5")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad5")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad6")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad6")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad7")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad7")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad8")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad8")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
 
@@ -128,26 +194,18 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         //end google
-        //begin chartboost
-//        else if(currentNode == "cappid")
-//        {
-//            print("chartboost App ID" + string)
-//            
-//            //save to Iphone user
-//            
-//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cappidOnline")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//        }
-//        else if(currentNode == "csign")
-//        {
-//            print("chartboost sign" + string)
-//            
-//            //save to Iphone user
-//            
-//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"csignOnline")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//        }
-        //end chartbosot
+ 
+        //AMAZON
+        else if(currentNode == "amazon")
+        {
+            print("amazon " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"amazon")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+            
         
         //begin Adcolony
         else if(currentNode == "adcolonyAppID")
@@ -180,46 +238,38 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
+            //read vungle
+        else if(currentNode == "vungleid")
+        {
+            print("vungleid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
             //read revmob
-//        else if(currentNode == "vungleid")
-//        {
-//            print("vungleid " + string)
-//            
-//            //save to Iphone user
-//            
-//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//        }
-            //read revmob
-        else if(currentNode == "amazon")
+ 
+            //read UNITY
+        else if(currentNode == "unityid")
         {
-            print("amazon " + string)
+            print("unityid " + string)
             
             //save to Iphone user
             
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"amazon")
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"unityid")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-            ///startapp
-        else if(currentNode == "startappID")
+            //read sonic
+        else if(currentNode == "sonicid")
         {
-            print("startappID " + string)
+            print("sonicid " + string)
             
             //save to Iphone user
             
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startappID")
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"sonicid")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-        else if(currentNode == "startAccID")
-        {
-            print("startAccID " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startAccID")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-        
         
         
         
