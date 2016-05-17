@@ -48,12 +48,7 @@
 		84E24DDB1B54D4F10006C070 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDA1B54D4F10006C070 /* 1.mp3 */; };
 		84E24DDD1B54D50B0006C070 /* buzz2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E24DDC1B54D50B0006C070 /* buzz2.mp3 */; };
 		9670A9071C646C4D00EEF360 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */; };
-		9677819B1CCE091D005219E4 /* libFlurry_7.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781901CCE091C005219E4 /* libFlurry_7.5.2.a */; };
-		9677819C1CCE091D005219E4 /* libFlurryAds_7.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781911CCE091C005219E4 /* libFlurryAds_7.5.2.a */; };
 		9677819D1CCE091D005219E4 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781921CCE091C005219E4 /* RevMobAds.framework */; };
-		9677819E1CCE091D005219E4 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 967781931CCE091C005219E4 /* StartApp.bundle */; };
-		9677819F1CCE091D005219E4 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781941CCE091C005219E4 /* StartApp.framework */; };
-		967781A01CCE091D005219E4 /* SUFlurryAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781951CCE091C005219E4 /* SUFlurryAdapter.framework */; };
 		967781A11CCE091D005219E4 /* Supersonic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781961CCE091C005219E4 /* Supersonic.framework */; };
 		967781A21CCE091D005219E4 /* UnityAds.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 967781971CCE091C005219E4 /* UnityAds.bundle */; };
 		967781A31CCE091D005219E4 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967781981CCE091C005219E4 /* UnityAds.framework */; };
@@ -129,12 +124,7 @@
 		84E24DDA1B54D4F10006C070 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
 		84E24DDC1B54D50B0006C070 /* buzz2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = buzz2.mp3; sourceTree = "<group>"; };
 		9670A9051C646C4D00EEF360 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		967781901CCE091C005219E4 /* libFlurry_7.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.5.2.a; sourceTree = "<group>"; };
-		967781911CCE091C005219E4 /* libFlurryAds_7.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_7.5.2.a; sourceTree = "<group>"; };
 		967781921CCE091C005219E4 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
-		967781931CCE091C005219E4 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
-		967781941CCE091C005219E4 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
-		967781951CCE091C005219E4 /* SUFlurryAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SUFlurryAdapter.framework; sourceTree = "<group>"; };
 		967781961CCE091C005219E4 /* Supersonic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Supersonic.framework; sourceTree = "<group>"; };
 		967781971CCE091C005219E4 /* UnityAds.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnityAds.bundle; sourceTree = "<group>"; };
 		967781981CCE091C005219E4 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
@@ -182,19 +172,15 @@
 				84AB9DF81B8089DC00F3D96B /* Security.framework in Frameworks */,
 				843366091B660FCB00058193 /* AudioToolbox.framework in Frameworks */,
 				84AB9DF41B80785100F3D96B /* Foundation.framework in Frameworks */,
-				9677819F1CCE091D005219E4 /* StartApp.framework in Frameworks */,
 				843366071B660FC500058193 /* AVFoundation.framework in Frameworks */,
 				84AB9DF21B80783E00F3D96B /* WebKit.framework in Frameworks */,
 				84AB9DF01B80782F00F3D96B /* Social.framework in Frameworks */,
 				1B60C4F21C7067CE005BBE59 /* AmazonAd.framework in Frameworks */,
-				9677819C1CCE091D005219E4 /* libFlurryAds_7.5.2.a in Frameworks */,
-				9677819B1CCE091D005219E4 /* libFlurry_7.5.2.a in Frameworks */,
 				9677819D1CCE091D005219E4 /* RevMobAds.framework in Frameworks */,
 				967781A51CCE091D005219E4 /* VungleSDK.framework in Frameworks */,
 				967781A11CCE091D005219E4 /* Supersonic.framework in Frameworks */,
 				843365FE1B660FAB00058193 /* EventKit.framework in Frameworks */,
 				843365FF1B660FAB00058193 /* EventKitUI.framework in Frameworks */,
-				967781A01CCE091D005219E4 /* SUFlurryAdapter.framework in Frameworks */,
 				1B4BE5741C9E73AB00106EBE /* AdColony.framework in Frameworks */,
 				843365FB1B660FA300058193 /* MessageUI.framework in Frameworks */,
 				843365F71B660F9600058193 /* SystemConfiguration.framework in Frameworks */,
@@ -217,12 +203,7 @@
 			children = (
 				967781B91CCE09EA005219E4 /* CoreFoundation.framework */,
 				967781BA1CCE09EA005219E4 /* MobileCoreServices.framework */,
-				967781901CCE091C005219E4 /* libFlurry_7.5.2.a */,
-				967781911CCE091C005219E4 /* libFlurryAds_7.5.2.a */,
 				967781921CCE091C005219E4 /* RevMobAds.framework */,
-				967781931CCE091C005219E4 /* StartApp.bundle */,
-				967781941CCE091C005219E4 /* StartApp.framework */,
-				967781951CCE091C005219E4 /* SUFlurryAdapter.framework */,
 				967781961CCE091C005219E4 /* Supersonic.framework */,
 				967781971CCE091C005219E4 /* UnityAds.bundle */,
 				967781981CCE091C005219E4 /* UnityAds.framework */,
@@ -432,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				967781A21CCE091D005219E4 /* UnityAds.bundle in Resources */,
-				9677819E1CCE091D005219E4 /* StartApp.bundle in Resources */,
 				84A1AD751B560B2400884A7D /* b1.png in Resources */,
 				1B60C4F41C70743E005BBE59 /* firstBg.png in Resources */,
 				3571650E19DB1F5500ED38A9 /* sprites.atlas in Resources */,

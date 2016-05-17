@@ -13,7 +13,7 @@ class Data {
     //5120 game
     
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/bug-fighter-v2.txt"
+    let AdURL: String = "http://webappchannel.com/tonyapp/bugs-fighter-v4.txt"
     
     //google
     let gBanner : String = ""
@@ -41,10 +41,7 @@ class Data {
     
     let SonicID: String = "47fc6d95"
     
-    
-    
-    
-    
+        
     
 
     

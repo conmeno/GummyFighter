@@ -23,10 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
     //==========FOR AD============
     //============================
     
+    
     Utility.SetUpAdData()
     
-    AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
-    AmazonAdRegistration.sharedRegistration().setLogging(true)
+    if(Utility.isAd3)
+    {
+        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+        AmazonAdRegistration.sharedRegistration().setLogging(true)
+    }
+    
     
     if(Utility.isAd4)
     {
@@ -35,13 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
     if(Utility.isAd7)
     {
         
-        let sdk = VungleSDK.sharedSDK()
-        // start vungle publisher library
-        sdk.startWithAppId(Utility.VungleID)
-        sdk.setLoggingEnabled(true)
-        sdk.clearCache()
-        sdk.clearSleep()
-    }
+                    let sdk = VungleSDK.sharedSDK()
+                    // start vungle publisher library
+                    sdk.startWithAppId(Utility.VungleID)
+                    sdk.setLoggingEnabled(true)
+                    sdk.clearCache()
+                    sdk.clearSleep()
+        
+        
+           }
     
     if(Utility.isAd5)
     {
@@ -76,10 +83,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
         Supersonic.sharedInstance().loadIS()
     }
     
+    
+    
     //============================
     //======END FOR AD============
     //============================
-    
 
 
     
