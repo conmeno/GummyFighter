@@ -13,7 +13,7 @@ class Data {
     //5120 game
     
     //URL setup online
-    let AdURL: String = "http://webappchannel.com/tonyapp/bugs-fighter-v4.txt"
+     let AdURL: String = "http://webappchannel.com/v5/BugsFighter_v5.txt"
     
     //google
     let gBanner : String = ""
@@ -25,23 +25,18 @@ class Data {
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = "a3d539cd6201454d86fa3645bd7fe567"
+    let AmazonKey: String = ""
     
     //adcolony
-    let AdcolonyAppID: String = "appc70edc8bd6574f2e81"
-    let AdcolonyZoneID: String = "vzd4fb70062a104f199e"
+    let AdcolonyAppID: String = ""
+    let AdcolonyZoneID: String = ""
     
     //revmob appID
-    let RevmobID: String = "571de047880fbf6a0b47c664"
+    let RevmobID: String = ""
+       
     
-    //Vungle ID
-    let VungleID: String = "1069679085"
     
-    let UnityGameId: String = "1062777"
     
-    let SonicID: String = "47fc6d95"
-    
-        
     
 
     
